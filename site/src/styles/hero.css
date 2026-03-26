@@ -56,14 +56,14 @@
 }
 
 .hero-lamp-wrapper img {
-  width: 220px;
+  width: 198px;
   height: auto;
   filter: drop-shadow(0 12px 40px rgba(60, 36, 21, 0.18));
 }
 
 .hero-lamp-glow {
-  width: 400px;
-  height: 200px;
+  width: 360px;
+  height: 180px;
   background: radial-gradient(ellipse at center top, rgba(237, 224, 200, 0.6) 0%, rgba(237, 224, 200, 0.25) 40%, transparent 70%);
   margin-top: -20px;
   pointer-events: none;
@@ -82,8 +82,8 @@
 
 .hero-illustration img {
   width: auto;
-  height: 28vh;
-  max-height: 240px;
+  height: 22vh;
+  max-height: 192px;
   filter: drop-shadow(0 4px 20px rgba(60, 36, 21, 0.08));
 }
 
