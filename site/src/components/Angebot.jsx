@@ -75,7 +75,7 @@ export default function Angebot() {
     <section
       ref={sectionRef}
       id="angebot"
-      className="relative bg-brown-dark texture-grain py-10 md:py-14 lg:py-16 overflow-hidden"
+      className="relative z-[2] bg-brown-dark texture-grain py-10 md:py-14 lg:py-16 overflow-hidden"
     >
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
@@ -98,8 +98,8 @@ export default function Angebot() {
               )}
 
               <div className="angebot-item-inner">
-                <div className="flex justify-center md:justify-center mb-4 md:mb-5">
-                  <item.icon className="angebot-icon w-[156px] h-[156px] md:w-[182px] md:h-[182px] lg:w-[208px] lg:h-[208px] text-cream-warm" />
+                <div className="flex justify-center md:justify-center mb-1 md:mb-2">
+                  <item.icon className="angebot-icon w-[132px] h-[132px] md:w-[156px] md:h-[156px] lg:w-[182px] lg:h-[182px] text-cream-warm" />
                 </div>
 
                 <h3 className="font-display font-bold text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] uppercase tracking-[-0.01em] leading-[1.1] text-cream-light mb-2 text-center">
