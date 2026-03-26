@@ -1,18 +1,23 @@
 ---
 /**
  * Innenraum — Full-width interior image between Hero and Angebot.
- * The image stays sticky while the next section scrolls over it.
+ * The image stays sticky while subsequent sections scroll over it.
+ *
+ * How it works:
+ * - Wrapper height = 100vh (image) + 80vh (scroll distance while stuck)
+ * - Sticky element stays at top:0 for 80vh of scrolling
+ * - Following content div has margin-top: -80vh + z-index: 2,
+ *   pulling it up so it overlaps and slides over the image
  */
 ---
 
-<div class="innenraum-wrapper relative" style="height: 85vh;">
-  <div class="sticky top-0 h-screen overflow-hidden">
+<div class="innenraum-wrapper relative" style="height: 180vh;">
+  <div class="sticky top-0 h-screen overflow-hidden z-[1]">
     <img
       class="w-full h-full object-cover"
       src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1400&q=80"
       alt="Blick in das Café Frohnatur — gemütlicher Innenraum mit warmer Beleuchtung"
       loading="eager"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-cream-light via-transparent to-transparent opacity-40" style="height: 15%;"></div>
   </div>
 </div>

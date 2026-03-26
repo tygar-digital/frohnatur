@@ -75,7 +75,7 @@ export default function Angebot() {
     <section
       ref={sectionRef}
       id="angebot"
-      className="relative z-[2] bg-brown-dark texture-grain py-10 md:py-14 lg:py-16 overflow-hidden"
+      className="relative bg-brown-dark texture-grain py-10 md:py-14 lg:py-16 overflow-hidden"
     >
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
