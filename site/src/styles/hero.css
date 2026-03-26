@@ -180,7 +180,7 @@
 
 @media (min-width: 1024px) {
   .hero-lamp-wrapper img { width: 300px; }
-  .hero-lamp-cable { height: calc(8vh); }
+  .hero-lamp-cable { height: calc(12vh); }
   .hero-lamp-glow { width: 520px; height: 280px; }
 
   .hero-illustration img { height: 44vh; max-height: 420px; }
@@ -199,7 +199,7 @@
 
 @media (min-width: 1280px) {
   .hero-lamp-wrapper img { width: 340px; }
-  .hero-lamp-cable { height: calc(8vh); }
+  .hero-lamp-cable { height: calc(12vh); }
   .hero-lamp-glow { width: 580px; height: 320px; }
 
   .hero-illustration img { height: 50vh; max-height: 480px; }

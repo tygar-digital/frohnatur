@@ -23,42 +23,33 @@ export default function Hero() {
       <CoffeeBean className="deco-bean--hero-6" color="var(--color-brown-warm)" />
 
       {/* ── Nav ── */}
-      <nav className="hero-nav relative z-51 flex items-start justify-between px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
+      <nav className="hero-nav relative z-51 flex items-center justify-between px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
         <img
-          className="h-5 w-auto mt-[0.2rem] lg:h-6"
+          className="h-5 w-auto lg:h-[1.5rem]"
           src="/assets/logo.svg"
           alt="Frohnatur"
         />
 
         {/* Desktop nav links — hidden on mobile */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-10">
-          <div className="flex items-center gap-6 lg:gap-8">
-            {[
-              { href: '#angebot', label: 'Angebot' },
-              { href: '#story', label: 'Story' },
-              { href: '#galerie', label: 'Galerie' },
-              { href: '#kontakt', label: 'Kontakt' },
-            ].map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="font-display font-bold text-[0.65rem] lg:text-[0.7rem] tracking-[0.08em] uppercase text-text-muted no-underline hover:text-brown-dark transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-          <div className="font-body text-[0.6rem] lg:text-[0.7rem] font-medium text-text-muted tracking-[0.02em] text-right leading-relaxed pl-8 lg:pl-10 border-l border-[rgba(139,115,85,0.2)]">
-            Neusser Str. 34<br />
-            Agnesviertel, Köln<br />
-            <span className="block mt-[0.2rem] pt-[0.2rem] border-t border-[rgba(139,115,85,0.2)]">
-              Mo–Fr 9–18h · Sa–So 10–18h
-            </span>
-          </div>
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          {[
+            { href: '#angebot', label: 'Angebot' },
+            { href: '#story', label: 'Story' },
+            { href: '#galerie', label: 'Galerie' },
+            { href: '#kontakt', label: 'Kontakt' },
+          ].map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="font-display font-bold text-[0.85rem] lg:text-[0.95rem] tracking-[0.06em] uppercase text-text-muted no-underline hover:text-brown-dark transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         {/* Burger — mobile only */}
