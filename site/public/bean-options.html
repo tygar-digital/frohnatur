@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Bean — 4 Varianten</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@400;500&display=swap');
+
+  :root {
+    --brown-dark: #4C1D03;
+    --brown-mid: #7A3518;
+    --brown-warm: #9B5E35;
+    --cream: #F5ECD7;
+    --cream-light: #FAF6ED;
+    --cream-warm: #EDE0C8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream-light);
+    color: var(--brown-dark);
+    padding: 2rem;
+  }
+
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .option {
+    text-align: center;
+  }
+
+  .option h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .option p {
+    font-size: 0.75rem;
+    color: var(--brown-warm);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .preview-box {
+    position: relative;
+    height: 200px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .preview-box.light {
+    background: var(--cream-light);
+    border: 1px solid var(--cream-warm);
+  }
+
+  .preview-box.dark {
+    background: var(--brown-dark);
+  }
+
+  .preview-box svg {
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.05));
+  }
+
+  .label {
+    font-size: 0.65rem;
+    color: var(--brown-warm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Coffee Bean — 4 Varianten</h1>
+
+<!-- ══════ LIGHT BACKGROUND ══════ -->
+<p class="label">Auf hellem Hintergrund (Hero)</p>
+<div class="grid">
+
+  <!-- Option A: Current -->
+  <div class="option">
+    <h2>A — Aktuell</h2>
+    <p>Einfache Ellipse, zwei parallele Linien</p>
+    <div class="preview-box light">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--brown-mid)">
+        <ellipse cx="12" cy="12" rx="10" ry="7" />
+        <path d="M5 8.5C8 6 16 6 19 8.5" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        <path d="M5 15.5C8 13 16 13 19 15.5" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--brown-dark)" style="transform: rotate(-40deg)">
+        <ellipse cx="12" cy="12" rx="10" ry="7" />
+        <path d="M5 8.5C8 6 16 6 19 8.5" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        <path d="M5 15.5C8 13 16 13 19 15.5" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brown-warm)" style="transform: rotate(30deg)">
+        <ellipse cx="12" cy="12" rx="10" ry="7" />
+        <path d="M5 8.5C8 6 16 6 19 8.5" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        <path d="M5 15.5C8 13 16 13 19 15.5" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Option B: Realistic bean shape -->
+  <div class="option">
+    <h2>B — Organisch</h2>
+    <p>Realistischere Form, einzelne Mittelnaht, leicht asymmetrisch</p>
+    <div class="preview-box light">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--brown-mid)">
+        <path d="M12 2C7 2 3 6 3 12c0 5 3 10 9 10s9-5 9-10c0-6-4-10-9-10z" />
+        <path d="M12 3C10 7 10 17 12 21" stroke="var(--cream-light)" stroke-width="1.1" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--brown-dark)" style="transform: rotate(-40deg)">
+        <path d="M12 2C7 2 3 6 3 12c0 5 3 10 9 10s9-5 9-10c0-6-4-10-9-10z" />
+        <path d="M12 3C10 7 10 17 12 21" stroke="var(--cream-light)" stroke-width="1.1" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brown-warm)" style="transform: rotate(30deg)">
+        <path d="M12 2C7 2 3 6 3 12c0 5 3 10 9 10s9-5 9-10c0-6-4-10-9-10z" />
+        <path d="M12 3C10 7 10 17 12 21" stroke="var(--cream-light)" stroke-width="1.1" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Option C: Classic bean with crease -->
+  <div class="option">
+    <h2>C — Klassisch</h2>
+    <p>Typische Kaffeebohne mit S-Naht, kompakter</p>
+    <div class="preview-box light">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--brown-mid)">
+        <ellipse cx="12" cy="12" rx="8" ry="10" />
+        <path d="M12 3C9 7 15 12 9 17C11 20 12 21 12 21" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--brown-dark)" style="transform: rotate(-40deg)">
+        <ellipse cx="12" cy="12" rx="8" ry="10" />
+        <path d="M12 3C9 7 15 12 9 17C11 20 12 21 12 21" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--brown-warm)" style="transform: rotate(30deg)">
+        <ellipse cx="12" cy="12" rx="8" ry="10" />
+        <path d="M12 3C9 7 15 12 9 17C11 20 12 21 12 21" stroke="var(--cream-light)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Option D: Outline only -->
+  <div class="option">
+    <h2>D — Outline</h2>
+    <p>Nur Kontur, keine Füllung — leichter, luftiger</p>
+    <div class="preview-box light">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--brown-mid)" stroke-width="1.3">
+        <ellipse cx="12" cy="12" rx="9" ry="6.5" />
+        <path d="M5 9C8 7 16 7 19 9" stroke-linecap="round" />
+        <path d="M5 15C8 13 16 13 19 15" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--brown-dark)" stroke-width="1.3" style="transform: rotate(-40deg)">
+        <ellipse cx="12" cy="12" rx="9" ry="6.5" />
+        <path d="M5 9C8 7 16 7 19 9" stroke-linecap="round" />
+        <path d="M5 15C8 13 16 13 19 15" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brown-warm)" stroke-width="1.5" style="transform: rotate(30deg)">
+        <ellipse cx="12" cy="12" rx="9" ry="6.5" />
+        <path d="M5 9C8 7 16 7 19 9" stroke-linecap="round" />
+        <path d="M5 15C8 13 16 13 19 15" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ DARK BACKGROUND ══════ -->
+<p class="label">Auf dunklem Hintergrund (Angebot)</p>
+<div class="grid">
+
+  <!-- Option A dark -->
+  <div class="option">
+    <h2>A</h2>
+    <div class="preview-box dark">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--cream-warm)" opacity="0.18">
+        <ellipse cx="12" cy="12" rx="10" ry="7" />
+        <path d="M5 8.5C8 6 16 6 19 8.5" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        <path d="M5 15.5C8 13 16 13 19 15.5" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--cream)" opacity="0.15" style="transform: rotate(-40deg)">
+        <ellipse cx="12" cy="12" rx="10" ry="7" />
+        <path d="M5 8.5C8 6 16 6 19 8.5" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        <path d="M5 15.5C8 13 16 13 19 15.5" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--cream-warm)" opacity="0.12" style="transform: rotate(30deg)">
+        <ellipse cx="12" cy="12" rx="10" ry="7" />
+        <path d="M5 8.5C8 6 16 6 19 8.5" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+        <path d="M5 15.5C8 13 16 13 19 15.5" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Option B dark -->
+  <div class="option">
+    <h2>B</h2>
+    <div class="preview-box dark">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--cream-warm)" opacity="0.18">
+        <path d="M12 2C7 2 3 6 3 12c0 5 3 10 9 10s9-5 9-10c0-6-4-10-9-10z" />
+        <path d="M12 3C10 7 10 17 12 21" stroke="var(--brown-dark)" stroke-width="1.1" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--cream)" opacity="0.15" style="transform: rotate(-40deg)">
+        <path d="M12 2C7 2 3 6 3 12c0 5 3 10 9 10s9-5 9-10c0-6-4-10-9-10z" />
+        <path d="M12 3C10 7 10 17 12 21" stroke="var(--brown-dark)" stroke-width="1.1" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--cream-warm)" opacity="0.12" style="transform: rotate(30deg)">
+        <path d="M12 2C7 2 3 6 3 12c0 5 3 10 9 10s9-5 9-10c0-6-4-10-9-10z" />
+        <path d="M12 3C10 7 10 17 12 21" stroke="var(--brown-dark)" stroke-width="1.1" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Option C dark -->
+  <div class="option">
+    <h2>C</h2>
+    <div class="preview-box dark">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--cream-warm)" opacity="0.18">
+        <ellipse cx="12" cy="12" rx="8" ry="10" />
+        <path d="M12 3C9 7 15 12 9 17C11 20 12 21 12 21" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--cream)" opacity="0.15" style="transform: rotate(-40deg)">
+        <ellipse cx="12" cy="12" rx="8" ry="10" />
+        <path d="M12 3C9 7 15 12 9 17C11 20 12 21 12 21" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--cream-warm)" opacity="0.12" style="transform: rotate(30deg)">
+        <ellipse cx="12" cy="12" rx="8" ry="10" />
+        <path d="M12 3C9 7 15 12 9 17C11 20 12 21 12 21" stroke="var(--brown-dark)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Option D dark -->
+  <div class="option">
+    <h2>D</h2>
+    <div class="preview-box dark">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cream-warm)" stroke-width="1.3" opacity="0.2">
+        <ellipse cx="12" cy="12" rx="9" ry="6.5" />
+        <path d="M5 9C8 7 16 7 19 9" stroke-linecap="round" />
+        <path d="M5 15C8 13 16 13 19 15" stroke-linecap="round" />
+      </svg>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="1.3" opacity="0.16" style="transform: rotate(-40deg)">
+        <ellipse cx="12" cy="12" rx="9" ry="6.5" />
+        <path d="M5 9C8 7 16 7 19 9" stroke-linecap="round" />
+        <path d="M5 15C8 13 16 13 19 15" stroke-linecap="round" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cream-warm)" stroke-width="1.5" opacity="0.13" style="transform: rotate(30deg)">
+        <ellipse cx="12" cy="12" rx="9" ry="6.5" />
+        <path d="M5 9C8 7 16 7 19 9" stroke-linecap="round" />
+        <path d="M5 15C8 13 16 13 19 15" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════
+   KONTAKT — Animations & Positioning
+═══════════════════════════════════ */
+
+/* ── Scroll-triggered entrance ── */
+
+.kontakt-animate {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--kontakt-delay, 0s);
+}
+
+.kontakt-tag {
+  --kontakt-delay: 0s;
+}
+
+.kontakt-animate.kontakt-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Info cards ── */
+
+.kontakt-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(200, 64, 45, 0.25);
+}
+
+.kontakt-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--color-brown-dark);
+  margin-top: 2px;
+}
+
+@media (min-width: 768px) {
+  .kontakt-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ── Map card ── */
+
+.kontakt-map-card {
+  border: 1px solid rgba(155, 94, 53, 0.12);
+  box-shadow: 0 2px 16px rgba(76, 29, 3, 0.04);
+}
+
+/* ── Map pin: subtle pulse ── */
+
+.kontakt-pin {
+  animation: kontaktPinPulse 3s ease-in-out infinite;
+}
+
+@keyframes kontaktPinPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* ── Decorative coffee beans — Kontakt positions ── */
+
+[class*="deco-bean--kontakt"] {
+  --bean-line: var(--color-cream-warm);
+}
+
+.deco-bean--kontakt-1 { top: 8%;     right: 6%;   width: 22px; height: 22px; transform: rotate(35deg);   opacity: 0.14; }
+.deco-bean--kontakt-2 { bottom: 15%; left: 5%;    width: 26px; height: 26px; transform: rotate(-50deg);  opacity: 0.12; }
+.deco-bean--kontakt-3 { bottom: 6%;  right: 14%;  width: 18px; height: 18px; transform: rotate(70deg);   opacity: 0.16; }
+
+@media (min-width: 768px) {
+  .deco-bean--kontakt-1 { width: 28px; height: 28px; right: 5%; }
+  .deco-bean--kontakt-2 { width: 32px; height: 32px; left: 3%; }
+  .deco-bean--kontakt-3 { width: 22px; height: 22px; }
+}
+
+@media (min-width: 1024px) {
+  .deco-bean--kontakt-1 { width: 30px; height: 30px; top: 10%;   right: 4%; }
+  .deco-bean--kontakt-2 { width: 36px; height: 36px; bottom: 12%; left: 2%; }
+  .deco-bean--kontakt-3 { width: 26px; height: 26px; right: 11%; }
+}
+
+/* ═══════════════════════════════════
+   ACCESSIBILITY
+═══════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .kontakt-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .kontakt-pin {
+    animation: none;
+  }
+}

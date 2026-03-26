@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# environment variables
+.env
+.env.production
+
+# logs
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Claude local settings
+.claude/settings.local.json
+
+# Debug & screenshot artifacts
+debug/
+scripts/debug/
+/*.png
+.playwright-mcp/
+
+# Prototype HTML files
+Website/
