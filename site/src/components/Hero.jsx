@@ -25,7 +25,7 @@ export default function Hero() {
       {/* ── Nav ── */}
       <nav className="hero-nav relative z-51 flex items-center justify-between px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
         <img
-          className="h-5 w-auto lg:h-[1.5rem]"
+          className="h-[18px] w-auto lg:h-[18px]"
           src="/assets/logo.svg"
           alt="Frohnatur"
         />
@@ -45,7 +45,7 @@ export default function Hero() {
                 e.preventDefault();
                 document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="font-display font-bold text-[0.85rem] lg:text-[0.95rem] tracking-[0.06em] uppercase text-text-muted no-underline hover:text-brown-dark transition-colors duration-200"
+              className="font-display font-bold text-[1.1rem] lg:text-[1.5rem] tracking-[0.04em] uppercase leading-none text-text-muted no-underline hover:text-brown-dark transition-colors duration-200"
             >
               {link.label}
             </a>
