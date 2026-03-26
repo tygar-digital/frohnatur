@@ -72,17 +72,23 @@
 .deco-bean--kontakt-1 { top: 8%;     right: 6%;   width: 22px; height: 22px; transform: rotate(35deg);   opacity: 0.14; }
 .deco-bean--kontakt-2 { bottom: 15%; left: 5%;    width: 26px; height: 26px; transform: rotate(-50deg);  opacity: 0.12; }
 .deco-bean--kontakt-3 { bottom: 6%;  right: 14%;  width: 18px; height: 18px; transform: rotate(70deg);   opacity: 0.16; }
+.deco-bean--kontakt-4 { top: 38%;    left: 4%;    width: 16px; height: 16px; transform: rotate(-20deg);  opacity: 0.12; }
+.deco-bean--kontakt-5 { top: 58%;    right: 5%;   width: 22px; height: 22px; transform: rotate(52deg);   opacity: 0.14; }
 
 @media (min-width: 768px) {
   .deco-bean--kontakt-1 { width: 28px; height: 28px; right: 5%; }
   .deco-bean--kontakt-2 { width: 32px; height: 32px; left: 3%; }
   .deco-bean--kontakt-3 { width: 22px; height: 22px; }
+  .deco-bean--kontakt-4 { width: 20px; height: 20px; left: 2%; }
+  .deco-bean--kontakt-5 { width: 28px; height: 28px; right: 3%; }
 }
 
 @media (min-width: 1024px) {
   .deco-bean--kontakt-1 { width: 30px; height: 30px; top: 10%;   right: 4%; }
   .deco-bean--kontakt-2 { width: 36px; height: 36px; bottom: 12%; left: 2%; }
   .deco-bean--kontakt-3 { width: 26px; height: 26px; right: 11%; }
+  .deco-bean--kontakt-4 { width: 24px; height: 24px; left: 2%; top: 42%; }
+  .deco-bean--kontakt-5 { width: 32px; height: 32px; right: 2%; top: 60%; }
 }
 
 /* ═══════════════════════════════════

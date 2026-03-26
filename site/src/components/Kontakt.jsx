@@ -198,6 +198,8 @@ export default function Kontakt() {
       <CoffeeBean className="deco-bean--kontakt-1" color="var(--color-brown-mid)" />
       <CoffeeBean className="deco-bean--kontakt-2" color="var(--color-brown-dark)" />
       <CoffeeBean className="deco-bean--kontakt-3" color="var(--color-brown-warm)" />
+      <CoffeeBean className="deco-bean--kontakt-4" color="var(--color-brown-dark)" />
+      <CoffeeBean className="deco-bean--kontakt-5" color="var(--color-brown-warm)" />
     </section>
   );
 }

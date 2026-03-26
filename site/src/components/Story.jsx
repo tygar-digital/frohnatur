@@ -71,6 +71,8 @@ export default function Story() {
       <CoffeeBean className="deco-bean--story-1" color="var(--color-brown-mid)" />
       <CoffeeBean className="deco-bean--story-2" color="var(--color-brown-dark)" />
       <CoffeeBean className="deco-bean--story-3" color="var(--color-brown-warm)" />
+      <CoffeeBean className="deco-bean--story-4" color="var(--color-brown-warm)" />
+      <CoffeeBean className="deco-bean--story-5" color="var(--color-brown-mid)" />
     </section>
   );
 }
