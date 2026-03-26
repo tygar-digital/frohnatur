@@ -122,7 +122,7 @@ export default function Hero() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="hero-content absolute top-[42%] sm:top-[48%] md:top-[56%] left-0 right-0 -translate-y-1/2 flex flex-col px-6 z-5 sm:px-8 md:px-12 md:right-auto md:max-w-[58%] lg:px-16 lg:max-w-[55%] xl:max-w-[1400px] xl:mx-auto xl:px-20 xl:right-0">
+      <div className="hero-content absolute top-[42%] sm:top-[48%] md:top-[calc(50%+3rem)] left-0 right-0 -translate-y-1/2 flex flex-col px-6 z-5 sm:px-8 md:px-12 md:right-auto md:max-w-[58%] lg:px-16 lg:max-w-[55%] xl:max-w-[1400px] xl:mx-auto xl:px-20 xl:right-0">
         <h1 className="hero-headline font-display font-[800] text-[2.2rem] sm:text-[3.5rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] leading-[1.0] tracking-[-0.02em] uppercase text-brown-dark mb-3">
           Your Local<br />
           <em className="italic text-brown-mid block">Hangout</em>
