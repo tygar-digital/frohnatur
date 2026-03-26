@@ -142,7 +142,7 @@ export default function Hero() {
       </div>
 
       {/* ── Character illustration ── */}
-      <div className="hero-illustration absolute bottom-8 right-[calc(0.5rem+8px)] z-3 flex justify-end md:right-12 md:bottom-[12%] lg:right-16 lg:bottom-[8%] xl:right-[max(calc(5rem+8px),calc((100vw-1400px)/2+5rem+8px))]">
+      <div className="hero-illustration absolute bottom-8 right-[calc(0.5rem+8px)] z-3 flex justify-end md:right-12 md:bottom-[5%] lg:right-16 lg:bottom-[3%] xl:right-[max(calc(5rem+8px),calc((100vw-1400px)/2+5rem+8px))]">
         <img
           src="/assets/Charakter1.svg"
           alt="Frohnatur Charakter — Figur mit Kaffeetasse"
