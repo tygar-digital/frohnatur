@@ -82,8 +82,8 @@
 
 .hero-illustration img {
   width: auto;
-  height: 22vh;
-  max-height: 192px;
+  height: 24vh;
+  max-height: 211px;
   filter: drop-shadow(0 4px 20px rgba(60, 36, 21, 0.08));
 }
 
