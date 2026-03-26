@@ -164,7 +164,7 @@
   .hero-lamp-cable { height: calc(14vh); }
   .hero-lamp-glow { width: 480px; height: 250px; }
 
-  .hero-illustration img { height: 34vh; max-height: 320px; }
+  .hero-illustration img { height: 31vh; max-height: 288px; }
 
   .deco-bean--hero-1 { width: 20px; height: 20px; }
   .deco-bean--hero-2 { width: 42px; height: 42px; }
@@ -183,7 +183,7 @@
   .hero-lamp-cable { height: calc(12vh); }
   .hero-lamp-glow { width: 520px; height: 280px; }
 
-  .hero-illustration img { height: 44vh; max-height: 420px; }
+  .hero-illustration img { height: 40vh; max-height: 378px; }
 
   .deco-bean--hero-1 { width: 24px; height: 24px; top: 10%; left: 10%; }
   .deco-bean--hero-2 { width: 50px; height: 50px; }
@@ -202,7 +202,7 @@
   .hero-lamp-cable { height: calc(12vh); }
   .hero-lamp-glow { width: 580px; height: 320px; }
 
-  .hero-illustration img { height: 50vh; max-height: 480px; }
+  .hero-illustration img { height: 45vh; max-height: 432px; }
 
   .deco-bean--hero-1 { width: 28px; height: 28px; }
   .deco-bean--hero-2 { width: 54px; height: 54px; }
