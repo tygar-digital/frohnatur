@@ -1,0 +1,46 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer-section relative bg-brown-dark texture-grain py-10 md:py-12 lg:py-14 overflow-hidden">
+  <div class="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
+
+    {/* Logo + Tagline */}
+    <div class="text-center mb-8 md:mb-10">
+      <img
+        class="footer-logo h-5 lg:h-6 w-auto mx-auto mb-3"
+        src="/assets/logo.svg"
+        alt="Frohnatur"
+      />
+      <p class="font-display italic font-medium text-[0.85rem] md:text-[0.9rem] text-cream-warm opacity-60">
+        Dein Café im Agnesviertel
+      </p>
+    </div>
+
+    {/* Divider — soft gradient */}
+    <div class="w-full soft-divider-dark mb-6 md:mb-8" aria-hidden="true"></div>
+
+    {/* Bottom row */}
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-center sm:text-left">
+      <p class="font-body text-[0.7rem] md:text-[0.75rem] text-cream-warm opacity-40">
+        &copy; {year} Frohnatur
+      </p>
+      <div class="flex items-center justify-center sm:justify-end gap-4">
+        <a
+          href="/impressum"
+          class="font-body text-[0.7rem] md:text-[0.75rem] text-cream-warm opacity-40 hover:opacity-70 transition-opacity duration-200"
+        >
+          Impressum
+        </a>
+        <span class="text-cream-warm opacity-20" aria-hidden="true">|</span>
+        <a
+          href="/datenschutz"
+          class="font-body text-[0.7rem] md:text-[0.75rem] text-cream-warm opacity-40 hover:opacity-70 transition-opacity duration-200"
+        >
+          Datenschutz
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>

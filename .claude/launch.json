@@ -7,6 +7,13 @@
       "runtimeArgs": ["run", "dev"],
       "cwd": "site",
       "port": 4321
+    },
+    {
+      "name": "frohnatur-soft-ui",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "4322"],
+      "cwd": "site-soft-ui",
+      "port": 4322
     }
   ]
 }
