@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CoffeeBean from './CoffeeBean.jsx';
 import { MAPS_URL } from '../data/constants.js';
 
@@ -7,8 +7,41 @@ import { MAPS_URL } from '../data/constants.js';
 ═══════════════════════════════════ */
 export default function Hero() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const burgerRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
+
+  /* ── Focus trap + ESC for mobile menu ── */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false);
+        burgerRef.current?.focus();
+        return;
+      }
+      if (e.key === 'Tab' && menuRef.current) {
+        const focusable = menuRef.current.querySelectorAll('a, button');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    // Focus first link on open
+    requestAnimationFrame(() => {
+      menuRef.current?.querySelector('a')?.focus();
+    });
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [menuOpen]);
 
   return (
     <section className="relative flex flex-col h-[100svh] overflow-hidden bg-cream-light texture-grain pt-9 md:pt-10">
@@ -45,7 +78,7 @@ export default function Hero() {
                   e.preventDefault();
                   document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="hero-nav-link font-display font-bold text-[1.1rem] lg:text-[1.5rem] tracking-[0.04em] uppercase leading-none text-text-muted no-underline hover:text-brown-dark transition-all duration-300 px-3 py-1.5 rounded-xl"
+                className="hero-nav-link font-display font-semibold text-[0.75rem] md:text-[0.8rem] tracking-[0.08em] uppercase leading-none text-text-muted no-underline hover:text-brown-dark transition-all duration-300 px-3 py-1.5 rounded-xl"
               >
                 {link.label}
               </a>
@@ -54,7 +87,8 @@ export default function Hero() {
 
           {/* Burger — soft circle */}
           <button
-            className={`flex md:hidden items-center justify-center w-10 h-10 soft-icon-circle cursor-pointer p-0 relative z-52 border-none`}
+            ref={burgerRef}
+            className={`flex md:hidden items-center justify-center w-10 h-10 soft-icon-circle cursor-pointer p-0 relative z-52 border-none focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]`}
             aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
             aria-expanded={menuOpen}
             onClick={toggleMenu}
@@ -70,6 +104,7 @@ export default function Hero() {
 
       {/* ── Mobile Menu Overlay ── */}
       <div
+        ref={menuRef}
         className={`fixed inset-0 z-50 flex flex-col justify-center items-center gap-8 text-center transition-opacity duration-350 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         style={{ background: 'rgba(250, 246, 237, 0.92)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
         aria-hidden={!menuOpen}

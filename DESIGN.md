@@ -135,8 +135,8 @@ Bewegung fühlt sich an wie der erste Schluck Kaffee am Morgen — sanft, warm, 
 | 2 | Charakter1.svg | SVG | Sektions-Illustration | ✅ |
 | 3 | Chrakter2.svg | SVG | Sektions-Illustration | ✅ |
 | 4 | Lampe.png / lampe-optimized.webp | PNG/WebP | Dekoration, Signature-Element | ✅ |
-| 5 | Hero-Bild | — | Hero-Sektion | ⬜ |
-| 6 | Atmosphäre-Bilder | — | Story / Galerie | ⬜ |
+| 5 | innenraum.webp | WebP | Innenraum-Sektion (KI-generiert, Platzhalter) | ✅ |
+| 6 | Atmosphäre-Bilder | — | Story / Galerie | ⬜ (Unsplash-Platzhalter) |
 
 ---
 
@@ -148,7 +148,7 @@ Bewegung fühlt sich an wie der erste Schluck Kaffee am Morgen — sanft, warm, 
 - **Illustrationen:** Charakter-Illustration als Hero-Begleitung
 
 ### Angebot
-- **Inhalt:** Was gibt es? Kaffee (Specialty Coffee, La Marzocco), Frühstück, Naturwein. Drei Bereiche visuell aufgeteilt.
+- **Inhalt:** Was gibt es? Kaffee (Specialty Coffee, La Marzocco), Frühstück, Kuchen & Süßes. Drei Bereiche visuell aufgeteilt.
 - **Conversion-Rolle:** Neugier wecken, Angebot entdecken lassen. Optional: Link zur Speisekarte.
 
 ### Story

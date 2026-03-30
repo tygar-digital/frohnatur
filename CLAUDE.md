@@ -33,7 +33,7 @@ Junge Erwachsene (25–40) aus dem Agnesviertel und umliegenden Vierteln. Urban,
 | 1 — Markenabsorption & Briefing | ✅ |
 | 2 — Design-Findung | ✅ |
 | 3 — Kreative Umsetzung | ✅ |
-| 4 — Review & Go-Live | ⬜ |
+| 4 — Review & Go-Live | 🔄 (technischer Review done, Go-Live braucht Kundendaten) |
 
 ### Content
 
@@ -70,3 +70,8 @@ Junge Erwachsene (25–40) aus dem Agnesviertel und umliegenden Vierteln. Urban,
 - La Marzocco Espressomaschine — Specialty Coffee Anspruch
 - Barlow Condensed Italic ist wichtig für die Persönlichkeit der Marke
 - Keine eigenen Fotos vorhanden — KI-Bilder oder Illustrationen als Lösung
+- Es gibt KEIN Naturwein im Angebot — nur Kaffee, Frühstück, Kuchen & Süßes
+- Glassmorphism/Soft-UI wurde in Phase 4 Review runtergeschraubt (backdrop-filter nur auf Nav beibehalten)
+- Galerie-Fotos sind Unsplash-Platzhalter, als solche markiert
+- Innenraum-Bild ist KI-generiert (Platzhalter)
+- **Go-Live BLOCKER:** Impressum-Daten, Datenschutz-Text, echte Telefonnummer vom Kunden

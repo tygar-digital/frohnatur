@@ -22,6 +22,14 @@ function ClockIcon({ className }) {
   );
 }
 
+function PhoneIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
 function InstagramIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -120,10 +128,29 @@ export default function Kontakt() {
               </div>
             </div>
 
-            {/* Instagram */}
+            {/* Telefon */}
             <div
               className="kontakt-animate kontakt-card"
               style={{ '--kontakt-delay': '0.40s' }}
+            >
+              <div className="kontakt-icon-wrap"><PhoneIcon className="kontakt-icon" /></div>
+              <div>
+                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
+                  Telefon
+                </h3>
+                <a
+                  href="tel:+49XXXXXXXXXX"
+                  className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red underline underline-offset-2 transition-colors duration-200"
+                >
+                  +49 XXX XXXXXXX
+                </a>
+              </div>
+            </div>
+
+            {/* Instagram */}
+            <div
+              className="kontakt-animate kontakt-card"
+              style={{ '--kontakt-delay': '0.48s' }}
             >
               <div className="kontakt-icon-wrap"><InstagramIcon className="kontakt-icon" /></div>
               <div>
@@ -135,7 +162,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.coffeeshop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red transition-colors duration-200"
+                    className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red underline underline-offset-2 transition-colors duration-200"
                   >
                     @frohnatur.coffeeshop
                   </a>
@@ -143,7 +170,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.bistrooo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 transition-all duration-200"
+                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 underline underline-offset-2 transition-all duration-200"
                   >
                     @frohnatur.bistrooo
                   </a>
@@ -151,7 +178,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.bar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 transition-all duration-200"
+                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 underline underline-offset-2 transition-all duration-200"
                   >
                     @frohnatur.bar
                   </a>

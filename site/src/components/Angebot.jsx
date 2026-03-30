@@ -85,7 +85,7 @@ export default function Angebot() {
         </h2>
 
         {/* ── Drei Bereiche — gleich groß ── */}
-        <div className="angebot-grid grid grid-cols-1 md:grid-cols-3 gap-0 md:items-stretch">
+        <div className="angebot-grid grid grid-cols-1 auto-rows-[1fr] gap-8 md:grid-cols-3 md:gap-0 md:items-stretch">
           {offerings.map((item, i) => (
             <div
               key={item.title}

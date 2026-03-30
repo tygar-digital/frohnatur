@@ -45,32 +45,26 @@
 
 /* Soft floating card — light surface */
 .soft-card {
-  background: rgba(255, 251, 245, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 251, 245, 0.5);
+  background: rgba(255, 251, 245, 0.6);
+  border: 1px solid rgba(155, 94, 53, 0.06);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(76, 29, 3, 0.06);
+  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.05);
 }
 
 /* Soft card on warm background */
 .soft-card-warm {
-  background: rgba(245, 236, 215, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 236, 215, 0.6);
+  background: rgba(245, 236, 215, 0.45);
+  border: 1px solid rgba(155, 94, 53, 0.06);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(76, 29, 3, 0.06);
+  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.05);
 }
 
 /* Soft card on dark surface */
 .soft-card-dark {
-  background: rgba(122, 53, 24, 0.2);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 236, 215, 0.08);
+  background: rgba(122, 53, 24, 0.18);
+  border: 1px solid rgba(245, 236, 215, 0.06);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Glass nav bar */
@@ -122,12 +116,10 @@
 
 /* Soft blockquote */
 .soft-quote {
-  background: rgba(255, 251, 245, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-left: 3px solid rgba(200, 64, 45, 0.4);
-  border-radius: 0 16px 16px 0;
-  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.04);
+  background: rgba(255, 251, 245, 0.4);
+  border-left: 3px solid rgba(200, 64, 45, 0.35);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 12px rgba(76, 29, 3, 0.03);
 }
 
 /* ═══════════════════════════════════

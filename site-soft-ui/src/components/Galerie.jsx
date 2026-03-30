@@ -7,12 +7,13 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation.js';
    Sprocket-Holes und analogem Kino-Feel.
 ═══════════════════════════════════ */
 
+/* Platzhalter-Bilder (Unsplash) — werden durch echte Fotos vom Café ersetzt */
 const photos = [
-  { id: 'interior', src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80', alt: 'Cafe-Interieur', caption: 'Dienstag, 7 Uhr. Noch niemand da.' },
-  { id: 'latte', src: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80', alt: 'Latte Art', caption: 'Der erste Flat White des Tages.' },
-  { id: 'pastry', src: 'https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=600&q=80', alt: 'Frische Donuts', caption: 'Gebacken mit zu viel Liebe.' },
-  { id: 'seats', src: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80', alt: 'Sitzbereich', caption: 'Dein Lieblingsplatz.' },
-  { id: 'wine', src: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80', alt: 'Naturwein', caption: 'Natur-Wein-Freitag.' },
+  { id: 'interior', src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80', alt: 'Cafe-Interieur (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
+  { id: 'latte', src: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80', alt: 'Latte Art (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
+  { id: 'pastry', src: 'https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=600&q=80', alt: 'Frische Donuts (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
+  { id: 'seats', src: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80', alt: 'Sitzbereich (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
+  { id: 'cake', src: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80', alt: 'Kuchen & Süßes (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
 ];
 
 /* ── Sprocket Hole (einzelnes Loch) ── */

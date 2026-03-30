@@ -65,12 +65,18 @@
   padding: 1.5rem 1.25rem;
   border-radius: 20px;
   height: 100%;
-  background: rgba(122, 53, 24, 0.2);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 236, 215, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(122, 53, 24, 0.18);
+  border: 1px solid rgba(245, 236, 215, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+/* Last text block grows to fill remaining space — equal card heights */
+.angebot-item-inner > p:last-child {
+  flex-grow: 1;
 }
 
 @media (min-width: 768px) {
