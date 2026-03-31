@@ -35,6 +35,13 @@
   to { opacity: 1; }
 }
 
+/* ── Nav Link Hover — Soft glass pill ── */
+
+.hero-nav-link:hover {
+  background: rgba(255, 251, 245, 0.5);
+  box-shadow: 0 2px 12px rgba(76, 29, 3, 0.06);
+}
+
 /* ── Lampe — hängt von der Decke ── */
 
 .hero-lamp-wrapper {
@@ -42,7 +49,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  z-index: 55;
   display: flex;
   flex-direction: column;
   align-items: center;

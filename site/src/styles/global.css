@@ -5,7 +5,7 @@
 @source "../layouts/**/*.astro";
 
 /* ═══════════════════════════════════
-   DESIGN TOKENS — aus DESIGN.md
+   DESIGN TOKENS — Soft UI Variant
 ═══════════════════════════════════ */
 
 @theme extend {
@@ -35,6 +35,91 @@
   --spacing-xl: 4rem;
   --spacing-2xl: 6rem;
   --spacing-section: 8rem;
+}
+
+/* ═══════════════════════════════════
+   SOFT UI UTILITIES
+   Weiche Formen, sanfte Schatten,
+   Glasmorphism, floating Cards
+═══════════════════════════════════ */
+
+/* Soft floating card — light surface */
+.soft-card {
+  background: rgba(255, 251, 245, 0.6);
+  border: 1px solid rgba(155, 94, 53, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.05);
+}
+
+/* Soft card on warm background */
+.soft-card-warm {
+  background: rgba(245, 236, 215, 0.45);
+  border: 1px solid rgba(155, 94, 53, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.05);
+}
+
+/* Soft card on dark surface */
+.soft-card-dark {
+  background: rgba(122, 53, 24, 0.18);
+  border: 1px solid rgba(245, 236, 215, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Glass nav bar */
+.soft-nav {
+  background: rgba(255, 251, 245, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 251, 245, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(76, 29, 3, 0.05);
+}
+
+/* Soft CTA button */
+.soft-btn {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(200, 64, 45, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.soft-btn:hover {
+  box-shadow: 0 6px 24px rgba(200, 64, 45, 0.35);
+  transform: translateY(-2px);
+}
+
+.soft-btn:active {
+  box-shadow: 0 2px 8px rgba(200, 64, 45, 0.2);
+  transform: translateY(0);
+}
+
+/* Soft icon circle */
+.soft-icon-circle {
+  background: rgba(245, 236, 215, 0.6);
+  border: 1px solid rgba(155, 94, 53, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(76, 29, 3, 0.04);
+}
+
+/* Soft divider */
+.soft-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(155, 94, 53, 0.12), transparent);
+}
+
+.soft-divider-dark {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(237, 224, 200, 0.12), transparent);
+}
+
+/* Soft blockquote */
+.soft-quote {
+  background: rgba(255, 251, 245, 0.4);
+  border-left: 3px solid rgba(200, 64, 45, 0.35);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 12px rgba(76, 29, 3, 0.03);
 }
 
 /* ═══════════════════════════════════
@@ -88,7 +173,6 @@
 
 /* ═══════════════════════════════════
    GLOBAL KEYFRAMES
-   (wiederverwendbar für alle Sektionen)
 ═══════════════════════════════════ */
 
 @keyframes fadeIn {
@@ -108,8 +192,6 @@
 
 /* ═══════════════════════════════════
    GLOBAL: Decorative Coffee Beans
-   Basis-Klasse für alle Sektionen.
-   Positionierung per Sektion in hero.css / angebot.css etc.
 ═══════════════════════════════════ */
 
 .deco-bean {
@@ -120,7 +202,6 @@
 
 /* ═══════════════════════════════════
    GLOBAL: Coffee Bean Scatter Layer
-   Full-page decoration overlay.
 ═══════════════════════════════════ */
 
 .bean-scatter-layer {
@@ -142,13 +223,14 @@
 
 /* ═══════════════════════════════════
    UTILITY: Paper Grain Texture
+   Minimal in Soft UI — clean surfaces
 ═══════════════════════════════════ */
 
 .texture-grain::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
 }

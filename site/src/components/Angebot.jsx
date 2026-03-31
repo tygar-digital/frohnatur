@@ -75,7 +75,7 @@ export default function Angebot() {
     <section
       ref={sectionRef}
       id="angebot"
-      className="relative bg-brown-dark texture-grain py-10 md:py-14 lg:py-16 overflow-hidden"
+      className="relative bg-brown-dark texture-grain pt-40 md:pt-52 lg:pt-60 pb-10 md:pb-14 lg:pb-16 overflow-hidden"
     >
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
@@ -85,7 +85,7 @@ export default function Angebot() {
         </h2>
 
         {/* ── Drei Bereiche — gleich groß ── */}
-        <div className="angebot-grid grid grid-cols-1 auto-rows-[1fr] gap-8 md:grid-cols-3 md:gap-0 md:items-stretch">
+        <div className="angebot-grid grid grid-cols-1 md:grid-cols-3 gap-0 md:items-stretch">
           {offerings.map((item, i) => (
             <div
               key={item.title}

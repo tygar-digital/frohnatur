@@ -2,10 +2,10 @@
    FOOTER — Styling
 ═══════════════════════════════════ */
 
-/* ── Dark section grain override ── */
+/* ── Dark section grain override — minimal for Soft UI ── */
 
 .footer-section.texture-grain::before {
-  opacity: 0.06;
+  opacity: 0.01;
 }
 
 /* ── Logo: invert for dark background → cream-light ── */

@@ -12,11 +12,9 @@ import Footer from '../components/Footer.astro';
 <Layout>
 <Hero client:load />
 <Innenraum />
-<div class="relative z-[2]" style="margin-top: -80vh;">
-  <Angebot client:visible />
-  <Story client:visible />
-  <Galerie client:visible />
-  <Kontakt client:visible />
-  <Footer />
-</div>
+<Angebot client:visible />
+<Story client:visible />
+<Galerie client:visible />
+<Kontakt client:visible />
+<Footer />
 </Layout>

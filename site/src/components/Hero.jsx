@@ -1,15 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import CoffeeBean from './CoffeeBean.jsx';
 import { MAPS_URL } from '../data/constants.js';
 
 /* ═══════════════════════════════════
-   HERO COMPONENT
-   Quelle: Website/hero-final.html (1:1)
+   HERO COMPONENT — Soft UI
 ═══════════════════════════════════ */
 export default function Hero() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const burgerRef = useRef(null);
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
+
+  /* ── Focus trap + ESC for mobile menu ── */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false);
+        burgerRef.current?.focus();
+        return;
+      }
+      if (e.key === 'Tab' && menuRef.current) {
+        const focusable = menuRef.current.querySelectorAll('a, button');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    // Focus first link on open
+    requestAnimationFrame(() => {
+      menuRef.current?.querySelector('a')?.focus();
+    });
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [menuOpen]);
 
   return (
     <section className="relative flex flex-col h-[100svh] overflow-hidden bg-cream-light texture-grain pt-9 md:pt-10">
@@ -22,52 +54,59 @@ export default function Hero() {
       <CoffeeBean className="deco-bean--hero-5" color="var(--color-brown-dark)" />
       <CoffeeBean className="deco-bean--hero-6" color="var(--color-brown-warm)" />
 
-      {/* ── Nav ── */}
-      <nav className="hero-nav relative z-51 flex items-center justify-between px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
-        <img
-          className="h-[18px] w-auto lg:h-[18px]"
-          src="/assets/logo.svg"
-          alt="Frohnatur"
-        />
+      {/* ── Nav — Glass morphism ── */}
+      <nav className="hero-nav relative z-51 px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
+        <div className="soft-nav flex items-center justify-between px-5 py-3 md:px-6 md:py-3.5 lg:px-8">
+          <img
+            className="h-[18px] w-auto lg:h-[18px]"
+            src="/assets/logo.svg"
+            alt="Frohnatur"
+          />
 
-        {/* Desktop nav links — hidden on mobile */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {[
-            { href: '#angebot', label: 'Angebot' },
-            { href: '#story', label: 'Story' },
-            { href: '#galerie', label: 'Galerie' },
-            { href: '#kontakt', label: 'Kontakt' },
-          ].map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="font-display font-bold text-[1.1rem] lg:text-[1.5rem] tracking-[0.04em] uppercase leading-none text-text-muted no-underline hover:text-brown-dark transition-colors duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            {[
+              { href: '#angebot', label: 'Angebot' },
+              { href: '#story', label: 'Story' },
+              { href: '#galerie', label: 'Galerie' },
+              { href: '#kontakt', label: 'Kontakt' },
+            ].map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="hero-nav-link font-display font-semibold text-[0.75rem] md:text-[0.8rem] tracking-[0.08em] uppercase leading-none text-text-muted no-underline hover:text-brown-dark transition-all duration-300 px-3 py-1.5 rounded-xl"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Burger — soft circle */}
+          <button
+            ref={burgerRef}
+            className={`flex md:hidden items-center justify-center w-10 h-10 soft-icon-circle cursor-pointer p-0 relative z-52 border-none focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]`}
+            aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
+          >
+            <div className="flex flex-col justify-center gap-[5px] w-5 h-5">
+              <span className={`block w-full h-[2px] bg-brown-dark rounded-full transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
+              <span className={`block w-full h-[2px] bg-brown-dark rounded-full transition-opacity duration-300 ease-in-out ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-full h-[2px] bg-brown-dark rounded-full transition-transform duration-300 ease-in-out ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
+            </div>
+          </button>
         </div>
-
-        {/* Burger — mobile only */}
-        <button
-          className={`flex md:hidden flex-col justify-center gap-[5px] w-7 h-7 bg-transparent border-none cursor-pointer p-0 relative z-52 mt-[0.1rem]`}
-          aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
-          aria-expanded={menuOpen}
-          onClick={toggleMenu}
-        >
-          <span className={`block w-full h-[2px] bg-brown-dark rounded-sm transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
-          <span className={`block w-full h-[2px] bg-brown-dark rounded-sm transition-opacity duration-300 ease-in-out ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-full h-[2px] bg-brown-dark rounded-sm transition-transform duration-300 ease-in-out ${menuOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
-        </button>
       </nav>
 
       {/* ── Mobile Menu Overlay ── */}
       <div
-        className={`fixed inset-0 z-50 bg-cream-light flex flex-col justify-center items-center gap-8 text-center transition-opacity duration-350 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        ref={menuRef}
+        className={`fixed inset-0 z-50 flex flex-col justify-center items-center gap-8 text-center transition-opacity duration-350 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        style={{ background: 'rgba(250, 246, 237, 0.92)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)' }}
         aria-hidden={!menuOpen}
       >
         <div className="flex flex-col gap-4">
@@ -96,7 +135,7 @@ export default function Hero() {
         <div className="font-body text-[0.85rem] font-medium text-text-muted leading-[1.8]">
           Neusser Str. 34<br />
           Agnesviertel, Köln
-          <span className="block mt-2 pt-2 border-t border-[rgba(139,115,85,0.2)]">
+          <span className="block mt-2 pt-2 border-t border-[rgba(139,115,85,0.15)]">
             Mo–Fr 9–18h · Sa–So 10–18h
           </span>
         </div>
@@ -104,7 +143,7 @@ export default function Hero() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-display font-bold text-[0.8rem] tracking-[0.08em] uppercase text-white bg-red px-7 py-3.5 rounded-lg no-underline"
+          className="inline-flex items-center gap-2 font-display font-bold text-[0.8rem] tracking-[0.08em] uppercase text-white bg-red px-7 py-3.5 rounded-xl no-underline soft-btn"
         >
           Komm vorbei →
         </a>
@@ -134,7 +173,7 @@ export default function Hero() {
           href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hero-cta inline-flex items-center gap-2 self-start font-display font-bold text-[0.8rem] lg:text-[0.85rem] tracking-[0.08em] uppercase text-white bg-red px-7 lg:px-8 py-3.5 lg:py-4 rounded-lg no-underline transition-all duration-250 ease-in-out hover:bg-red-dark hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]"
+          className="hero-cta inline-flex items-center gap-2 self-start font-display font-bold text-[0.8rem] lg:text-[0.85rem] tracking-[0.08em] uppercase text-white bg-red px-7 lg:px-8 py-3.5 lg:py-4 rounded-xl no-underline soft-btn focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]"
         >
           Komm vorbei
           <span className="text-base transition-transform duration-250 ease-in-out group-hover:translate-x-[3px]">→</span>

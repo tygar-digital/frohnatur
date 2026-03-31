@@ -22,6 +22,14 @@ function ClockIcon({ className }) {
   );
 }
 
+function PhoneIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
 function InstagramIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -76,7 +84,7 @@ export default function Kontakt() {
               className="kontakt-animate kontakt-card"
               style={{ '--kontakt-delay': '0.24s' }}
             >
-              <MapPinIcon className="kontakt-icon" />
+              <div className="kontakt-icon-wrap"><MapPinIcon className="kontakt-icon" /></div>
               <div>
                 <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
                   Adresse
@@ -102,7 +110,7 @@ export default function Kontakt() {
               className="kontakt-animate kontakt-card"
               style={{ '--kontakt-delay': '0.32s' }}
             >
-              <ClockIcon className="kontakt-icon" />
+              <div className="kontakt-icon-wrap"><ClockIcon className="kontakt-icon" /></div>
               <div>
                 <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
                   Öffnungszeiten
@@ -120,12 +128,31 @@ export default function Kontakt() {
               </div>
             </div>
 
-            {/* Instagram */}
+            {/* Telefon */}
             <div
               className="kontakt-animate kontakt-card"
               style={{ '--kontakt-delay': '0.40s' }}
             >
-              <InstagramIcon className="kontakt-icon" />
+              <div className="kontakt-icon-wrap"><PhoneIcon className="kontakt-icon" /></div>
+              <div>
+                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
+                  Telefon
+                </h3>
+                <a
+                  href="tel:+49XXXXXXXXXX"
+                  className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red underline underline-offset-2 transition-colors duration-200"
+                >
+                  +49 XXX XXXXXXX
+                </a>
+              </div>
+            </div>
+
+            {/* Instagram */}
+            <div
+              className="kontakt-animate kontakt-card"
+              style={{ '--kontakt-delay': '0.48s' }}
+            >
+              <div className="kontakt-icon-wrap"><InstagramIcon className="kontakt-icon" /></div>
               <div>
                 <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
                   Folge uns
@@ -135,7 +162,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.coffeeshop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red transition-colors duration-200"
+                    className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red underline underline-offset-2 transition-colors duration-200"
                   >
                     @frohnatur.coffeeshop
                   </a>
@@ -143,7 +170,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.bistrooo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 transition-all duration-200"
+                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 underline underline-offset-2 transition-all duration-200"
                   >
                     @frohnatur.bistrooo
                   </a>
@@ -151,7 +178,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.bar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 transition-all duration-200"
+                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 underline underline-offset-2 transition-all duration-200"
                   >
                     @frohnatur.bar
                   </a>
@@ -166,10 +193,12 @@ export default function Kontakt() {
             style={{ '--kontakt-delay': '0.32s' }}
           >
             <div className="kontakt-map-card relative flex flex-col items-center justify-center rounded-xl bg-cream py-12 px-8 md:py-16 md:h-full min-h-[320px]">
-              {/* Decorative large map pin */}
-              <svg className="kontakt-pin w-[56px] md:w-[64px] lg:w-[72px] h-auto text-red mb-6 opacity-80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 15 9 15s9-8.25 9-15c0-4.97-4.03-9-9-9zm0 12.75c-2.07 0-3.75-1.68-3.75-3.75S9.93 5.25 12 5.25s3.75 1.68 3.75 3.75-1.68 3.75-3.75 3.75z" />
-              </svg>
+              {/* Decorative large map pin — soft icon circle */}
+              <div className="soft-icon-circle bg-cream w-[80px] h-[80px] md:w-[92px] md:h-[92px] lg:w-[100px] lg:h-[100px] flex items-center justify-center mb-6">
+                <svg className="kontakt-pin w-[40px] md:w-[46px] lg:w-[52px] h-auto text-red opacity-80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 15 9 15s9-8.25 9-15c0-4.97-4.03-9-9-9zm0 12.75c-2.07 0-3.75-1.68-3.75-3.75S9.93 5.25 12 5.25s3.75 1.68 3.75 3.75-1.68 3.75-3.75 3.75z" />
+                </svg>
+              </div>
 
               {/* Address — large, typographic */}
               <p className="font-display font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] uppercase tracking-[-0.01em] leading-[1.15] text-brown-dark text-center mb-1.5">
@@ -184,7 +213,7 @@ export default function Kontakt() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-display font-bold text-[0.8rem] lg:text-[0.85rem] tracking-[0.08em] uppercase text-white bg-red px-7 lg:px-8 py-3.5 lg:py-4 rounded-lg no-underline transition-all duration-250 ease-in-out hover:bg-red-dark hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]"
+                className="inline-flex items-center gap-2 font-display font-bold text-[0.8rem] lg:text-[0.85rem] tracking-[0.08em] uppercase text-white bg-red px-7 lg:px-8 py-3.5 lg:py-4 rounded-xl no-underline soft-btn focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]"
               >
                 Auf Google Maps anzeigen
                 <span className="text-base" aria-hidden="true">→</span>

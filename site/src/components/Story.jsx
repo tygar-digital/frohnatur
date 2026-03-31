@@ -43,9 +43,8 @@ export default function Story() {
                 Frohnatur — das ist kein ausgedachter Markenname. Das ist eine Haltung. Wir glauben daran, dass ein guter Tag mit einem guten Kaffee anfängt. Und dass der beste Kaffee da getrunken wird, wo man sich wohlfühlt.
               </p>
 
-              {/* ── Pull-Quote ── */}
-              <blockquote className="story-animate story-pullquote relative font-display italic font-medium text-[1.15rem] md:text-[1.25rem] lg:text-[1.35rem] leading-[1.35] text-brown-dark pl-5 md:pl-6 mb-6 md:mb-8 max-w-[460px]" style={{ '--story-delay': '0.32s' }}>
-                <span className="absolute left-0 top-0 bottom-0 w-[2px] bg-red opacity-60 rounded-full" aria-hidden="true" />
+              {/* ── Pull-Quote — Soft glass quote ── */}
+              <blockquote className="story-animate story-pullquote soft-quote relative font-display italic font-medium text-[1.15rem] md:text-[1.25rem] lg:text-[1.35rem] leading-[1.35] text-brown-dark p-5 md:p-6 mb-6 md:mb-8 max-w-[460px]" style={{ '--story-delay': '0.32s' }}>
                 „Natural Wine does make hangovers. But we have the cure."
               </blockquote>
 

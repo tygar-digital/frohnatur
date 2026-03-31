@@ -1,35 +1,17 @@
 ---
 /**
- * Innenraum — Full-width interior image between Hero and Angebot.
- * The image stays sticky while subsequent sections scroll over it.
- *
- * How it works:
- * - Wrapper height = 100vh (image) + 80vh (scroll distance while stuck)
- * - Sticky element stays at top:0 for 80vh of scrolling
- * - Following content div has margin-top: -80vh + z-index: 2,
- *   pulling it up so it overlaps and slides over the image
+ * Innenraum — Interior image between Hero and Angebot.
+ * Rounded corners, sits on the transition between sections.
+ * KI-generiert (Platzhalter).
  */
 ---
 
-<div class="innenraum-wrapper relative" style="height: 180vh;">
-  <div class="sticky top-0 h-screen overflow-hidden z-[1]">
-    <picture>
-      <source
-        media="(max-width: 767px)"
-        srcset="/assets/innenraum-mobile.webp"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 768px)"
-        srcset="/assets/innenraum-desktop.webp"
-        type="image/webp"
-      />
-      <img
-        class="w-full h-full object-cover"
-        src="/assets/innenraum-desktop.webp"
-        alt="Frohnatur Kaffeeshop — Speisekarte, Latte Art und hausgemachter Kuchen auf dem Tisch"
-        loading="eager"
-      />
-    </picture>
-  </div>
+<div class="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20 -mb-32 md:-mb-44 lg:-mb-52">
+  <img
+    class="w-full h-auto rounded-2xl md:rounded-3xl object-cover max-h-[500px] md:max-h-[600px]"
+    src="/assets/innenraum.webp"
+    alt="Frohnatur Kaffeeshop — Kuchen und Latte Art (KI-generiert, Platzhalter)"
+    loading="eager"
+    style="box-shadow: 0 12px 40px rgba(76, 29, 3, 0.12);"
+  />
 </div>

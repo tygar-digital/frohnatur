@@ -45,25 +45,30 @@ const beans = [
 export default function CoffeeBeanScatter() {
   return (
     <div className="bean-scatter-layer" aria-hidden="true">
-      {beans.map((b, i) => (
-        <span
-          key={i}
-          className="bean-scatter"
-          style={{
-            position: 'absolute',
-            top: b.top,
-            ...(b.left != null ? { left: b.left } : {}),
-            ...(b.right != null ? { right: b.right } : {}),
-            width: `${b.w}px`,
-            height: `${b.w}px`,
-            transform: `rotate(${b.rot}deg)`,
-            opacity: b.op,
-            pointerEvents: 'none',
-          }}
-        >
-          <CoffeeBean color={b.color} />
-        </span>
-      ))}
+      {beans.map((b, i) => {
+        /* Scale beans down on mobile: clamp between 65% and 100% of original */
+        const minW = Math.round(b.w * 0.65);
+        const size = `clamp(${minW}px, ${b.w * 0.06}vw + ${minW * 0.5}px, ${b.w}px)`;
+        return (
+          <span
+            key={i}
+            className="bean-scatter"
+            style={{
+              position: 'absolute',
+              top: b.top,
+              ...(b.left != null ? { left: b.left } : {}),
+              ...(b.right != null ? { right: b.right } : {}),
+              width: size,
+              height: size,
+              transform: `rotate(${b.rot}deg)`,
+              opacity: b.op,
+              pointerEvents: 'none',
+            }}
+          >
+            <CoffeeBean color={b.color} />
+          </span>
+        );
+      })}
     </div>
   );
 }
