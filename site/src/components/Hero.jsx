@@ -55,7 +55,7 @@ export default function Hero() {
       <CoffeeBean className="deco-bean--hero-6" color="var(--color-brown-warm)" />
 
       {/* ── Nav — Glass morphism ── */}
-      <nav className="hero-nav relative z-51 px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
+      <nav className="hero-nav fixed top-[36px] left-0 right-0 z-51 px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
         <div className="soft-nav flex items-center justify-between px-5 py-3 md:px-6 md:py-3.5 lg:px-8">
           <img
             className="h-[18px] w-auto lg:h-[18px]"
@@ -136,7 +136,7 @@ export default function Hero() {
           Neusser Str. 34<br />
           Agnesviertel, Köln
           <span className="block mt-2 pt-2 border-t border-[rgba(139,115,85,0.15)]">
-            Mo–Fr 9–18h · Sa–So 10–18h
+            Mo–So 9–18h
           </span>
         </div>
         <a
@@ -162,9 +162,8 @@ export default function Hero() {
 
       {/* ── Main content ── */}
       <div className="hero-content absolute top-[calc(50%-0.5rem)] md:top-[calc(50%+3rem)] left-0 right-0 -translate-y-1/2 flex flex-col px-6 z-5 sm:px-8 md:px-12 md:right-auto md:max-w-[58%] lg:px-16 lg:max-w-[55%] xl:max-w-[1400px] xl:mx-auto xl:px-20 xl:right-0">
-        <h1 className="hero-headline font-display font-[800] text-[2.2rem] sm:text-[3.5rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] leading-[1.0] tracking-[-0.02em] uppercase text-brown-dark mb-3">
-          Your Local<br />
-          <em className="italic text-brown-mid block">Hangout</em>
+        <h1 className="hero-headline font-display font-[800] italic text-[2.2rem] sm:text-[3.5rem] md:text-[3.75rem] lg:text-[4.5rem] xl:text-[5rem] leading-[1.0] tracking-[-0.02em] uppercase text-brown-dark mb-3">
+          Your Local <span className="text-brown-mid">Hangout</span>
         </h1>
         <p className="hero-subtitle font-display italic font-medium text-[1rem] sm:text-[1.15rem] lg:text-[1.3rem] leading-[1.35] text-brown-warm max-w-[280px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[400px] mb-5">
           Specialty Coffee, Frühstück &amp; Süßes — von morgens bis abends.

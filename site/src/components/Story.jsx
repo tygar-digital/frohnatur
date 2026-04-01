@@ -28,9 +28,8 @@ export default function Story() {
             </span>
 
             {/* ── Headline ── */}
-            <h2 className="story-animate font-display font-bold text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4 max-w-[600px] lg:max-w-[700px]" style={{ '--story-delay': '0.08s' }}>
-              Frohnatur ist<br />
-              <em className="italic text-brown-mid">ein Gefühl</em>
+            <h2 className="story-animate font-display font-bold italic text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4 max-w-[600px] lg:max-w-[700px]" style={{ '--story-delay': '0.08s' }}>
+              Frohnatur ist <span className="text-brown-mid">ein Gefühl</span>
             </h2>
 
             {/* ── Sub-Headline (Italic) ── */}

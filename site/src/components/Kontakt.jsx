@@ -58,11 +58,10 @@ export default function Kontakt() {
 
         {/* Headline */}
         <h2
-          className="kontakt-animate font-display font-bold text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4"
+          className="kontakt-animate font-display font-bold italic text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4"
           style={{ '--kontakt-delay': '0.08s' }}
         >
-          Wir sind hier<br />
-          <em className="italic text-brown-mid">für dich</em>
+          Wir sind hier <span className="text-brown-mid">für dich</span>
         </h2>
 
         {/* Sub-Headline */}
@@ -117,12 +116,8 @@ export default function Kontakt() {
                 </h3>
                 <div className="font-body text-[0.9rem] md:text-[0.95rem] leading-[1.65] text-text-muted">
                   <div className="flex justify-between gap-4 max-w-[260px]">
-                    <span>Mo – Fr</span>
+                    <span>Mo – So</span>
                     <span className="font-medium text-brown-dark">9 – 18 Uhr</span>
-                  </div>
-                  <div className="flex justify-between gap-4 max-w-[260px]">
-                    <span>Sa – So</span>
-                    <span className="font-medium text-brown-dark">10 – 18 Uhr</span>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@
 - **Website:** Neubau
 - **Domain:** TBD
 - **Instagram:** @frohnatur.coffeeshop (auch @frohnatur.bistrooo, @frohnatur.bar)
-- **Öffnungszeiten:** Mo–Fr 9–18h · Sa–So 10–18h
+- **Öffnungszeiten:** Mo–So 9–18h
 - **Format:** Onepager
 
 ## Zielgruppe
@@ -45,7 +45,7 @@ Junge Erwachsene (25–40) aus dem Agnesviertel und umliegenden Vierteln. Urban,
 | Fotos vom Laden | ⬜ | Keine eigenen Fotos — nur Instagram-Screenshots als Referenz |
 | Texte | ⬜ | Claude erstellt Entwürfe |
 | Speisekarte / Angebot | ⬜ | Kunde liefert |
-| Öffnungszeiten & Adresse | ✅ | Mo–Fr 9–18h, Sa–So 10–18h, Neusser Str. 34 |
+| Öffnungszeiten & Adresse | ✅ | Mo–So 9–18h, Neusser Str. 34 |
 | Social Media Links | ✅ | @frohnatur.coffeeshop, @frohnatur.bistrooo, @frohnatur.bar |
 | Impressum / Datenschutz | ⬜ | TBD |
 
