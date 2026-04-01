@@ -30,3 +30,9 @@ scripts/debug/
 
 # Prototype HTML files
 Website/
+
+# Worktrees
+.worktrees/
+
+# Superpowers brainstorm artifacts
+.superpowers/
