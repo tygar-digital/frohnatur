@@ -3,9 +3,8 @@
   "configurations": [
     {
       "name": "frohnatur",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "cwd": "site",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd '/Users/jandemartin/Library/CloudStorage/OneDrive-Persönlich/Projekte/Digital Agentur/Kundenprojekte/Frohnatur/site' && PATH=/usr/local/bin:$PATH npm run dev -- --port 4321"],
       "port": 4321
     },
     {

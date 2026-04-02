@@ -142,11 +142,22 @@ export default function Galerie() {
   const sprocketCount = allPhotos.length * 4;
 
   return (
-    <div
+    <section
       ref={sectionRef}
       id="galerie"
-      className="filmroll-section relative overflow-hidden"
+      className="filmroll-section relative overflow-hidden bg-cream texture-grain"
+      aria-labelledby="galerie-heading"
     >
+      {/* ── Section Heading ── */}
+      <div className="px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20 pt-20 md:pt-28 lg:pt-32 pb-8 md:pb-12">
+        <span className="filmroll-animate block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-brown-warm mb-4 md:mb-5">
+          Einblicke
+        </span>
+        <h2 id="galerie-heading" className="filmroll-animate font-display font-bold text-[1.75rem] sm:text-[2.1rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4">
+          So sieht's bei uns aus
+        </h2>
+      </div>
+
       {/* ── Film Strip ── */}
       <div className="filmroll-animate filmroll-strip-wrapper">
         <SprocketRow count={sprocketCount} />
@@ -233,6 +244,6 @@ export default function Galerie() {
         </div>
       )}
 
-    </div>
+    </section>
   );
 }

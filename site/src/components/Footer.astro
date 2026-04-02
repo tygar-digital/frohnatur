@@ -11,67 +11,50 @@ const year = new Date().getFullYear();
         class="footer-logo h-5 lg:h-6 w-auto mx-auto mb-3"
         src="/assets/logo.svg"
         alt="Frohnatur"
+
       />
-      <p class="font-display italic font-medium text-[0.85rem] md:text-[0.9rem] text-cream-warm opacity-60">
-        Dein Café im Agnesviertel
+      <p class="font-display italic font-medium text-[0.85rem] md:text-[0.9rem] text-cream-warm opacity-75">
+        Your Local Hangout
       </p>
     </div>
 
-    {/* Info Grid: Adresse, Öffnungszeiten, Social */}
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center mb-8 md:mb-10">
+    {/* Decorative separator */}
+    <div class="flex items-center justify-center gap-2 mb-6 md:mb-8" aria-hidden="true">
+      <span class="block w-1 h-1 rounded-full bg-cream-warm opacity-25"></span>
+      <span class="block w-1.5 h-1.5 rounded-full bg-cream-warm opacity-35"></span>
+      <span class="block w-1 h-1 rounded-full bg-cream-warm opacity-25"></span>
+    </div>
 
-      {/* Adresse */}
-      <div>
-        <h3 class="font-display font-bold text-[0.7rem] md:text-[0.75rem] uppercase tracking-[0.1em] text-cream-warm opacity-60 mb-2">
-          Adresse
-        </h3>
-        <p class="font-body text-[0.8rem] md:text-[0.85rem] leading-[1.6] text-cream-warm opacity-50">
-          Neusser Straße 34<br />
-          50670 Köln · Agnesviertel
-        </p>
-      </div>
-
-      {/* Öffnungszeiten */}
-      <div>
-        <h3 class="font-display font-bold text-[0.7rem] md:text-[0.75rem] uppercase tracking-[0.1em] text-cream-warm opacity-60 mb-2">
-          Öffnungszeiten
-        </h3>
-        <p class="font-body text-[0.8rem] md:text-[0.85rem] leading-[1.6] text-cream-warm opacity-50">
-          Mo – So: 9 – 18 Uhr
-        </p>
-      </div>
-
-      {/* Social */}
-      <div>
-        <h3 class="font-display font-bold text-[0.7rem] md:text-[0.75rem] uppercase tracking-[0.1em] text-cream-warm opacity-60 mb-2">
-          Folge uns
-        </h3>
-        <div class="flex flex-col items-center gap-0.5">
-          <a
-            href="https://instagram.com/frohnatur.coffeeshop"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-body text-[0.8rem] md:text-[0.85rem] text-cream-warm opacity-50 hover:opacity-80 underline underline-offset-2 transition-opacity duration-200"
-          >
-            @frohnatur.coffeeshop
-          </a>
-          <a
-            href="https://instagram.com/frohnatur.bistrooo"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-body text-[0.75rem] text-cream-warm opacity-35 hover:opacity-60 underline underline-offset-2 transition-opacity duration-200"
-          >
-            @frohnatur.bistrooo
-          </a>
-          <a
-            href="https://instagram.com/frohnatur.bar"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="font-body text-[0.75rem] text-cream-warm opacity-35 hover:opacity-60 underline underline-offset-2 transition-opacity duration-200"
-          >
-            @frohnatur.bar
-          </a>
-        </div>
+    {/* Social */}
+    <div class="text-center mb-8 md:mb-10">
+      <h3 class="font-display font-bold text-[0.8rem] md:text-[0.85rem] uppercase tracking-[0.1em] text-cream-warm opacity-80 mb-2">
+        Folge uns
+      </h3>
+      <div class="flex flex-col items-center gap-1">
+        <a
+          href="https://instagram.com/frohnatur.coffeeshop"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-body text-[0.85rem] md:text-[0.9rem] text-cream-warm opacity-65 hover:opacity-85 underline underline-offset-2 transition-opacity duration-200"
+        >
+          @frohnatur.coffeeshop
+        </a>
+        <a
+          href="https://instagram.com/frohnatur.bistrooo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-body text-[0.8rem] text-cream-warm opacity-60 hover:opacity-85 underline underline-offset-2 transition-opacity duration-200"
+        >
+          @frohnatur.bistrooo
+        </a>
+        <a
+          href="https://instagram.com/frohnatur.bar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-body text-[0.8rem] text-cream-warm opacity-60 hover:opacity-85 underline underline-offset-2 transition-opacity duration-200"
+        >
+          @frohnatur.bar
+        </a>
       </div>
     </div>
 
@@ -80,20 +63,20 @@ const year = new Date().getFullYear();
 
     {/* Bottom row */}
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-center sm:text-left">
-      <p class="font-body text-[0.7rem] md:text-[0.75rem] text-cream-warm opacity-40">
+      <p class="font-body text-[0.8rem] md:text-[0.85rem] text-cream-warm opacity-60">
         &copy; {year} Frohnatur
       </p>
       <div class="flex items-center justify-center sm:justify-end gap-4">
         <a
           href="/impressum"
-          class="font-body text-[0.7rem] md:text-[0.75rem] text-cream-warm opacity-40 hover:opacity-70 underline underline-offset-2 transition-opacity duration-200"
+          class="font-body text-[0.8rem] md:text-[0.85rem] text-cream-warm opacity-60 hover:opacity-80 underline underline-offset-2 transition-opacity duration-200"
         >
           Impressum
         </a>
         <span class="text-cream-warm opacity-20" aria-hidden="true">|</span>
         <a
           href="/datenschutz"
-          class="font-body text-[0.7rem] md:text-[0.75rem] text-cream-warm opacity-40 hover:opacity-70 underline underline-offset-2 transition-opacity duration-200"
+          class="font-body text-[0.8rem] md:text-[0.85rem] text-cream-warm opacity-60 hover:opacity-80 underline underline-offset-2 transition-opacity duration-200"
         >
           Datenschutz
         </a>

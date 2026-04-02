@@ -1,6 +1,8 @@
-import CoffeeBean from './CoffeeBean.jsx';
+import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation.js';
 import { MAPS_URL } from '../data/constants.js';
+
+const MAPS_EMBED_URL = 'https://www.google.com/maps?q=Neusser+Stra%C3%9Fe+34,+50670+K%C3%B6ln&output=embed&hl=de';
 
 /* ── Inline SVG Icons ── */
 
@@ -42,12 +44,13 @@ function InstagramIcon({ className }) {
 
 export default function Kontakt() {
   const sectionRef = useScrollAnimation('kontakt-visible', '.kontakt-animate');
+  const [mapConsented, setMapConsented] = useState(false);
 
   return (
     <section
       ref={sectionRef}
       id="kontakt"
-      className="kontakt-section relative bg-cream-warm texture-grain py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="kontakt-section relative bg-cream-warm texture-grain warm-glow py-20 md:py-28 lg:py-32 overflow-hidden"
     >
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
@@ -58,7 +61,7 @@ export default function Kontakt() {
 
         {/* Headline */}
         <h2
-          className="kontakt-animate font-display font-bold italic text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4"
+          className="kontakt-animate font-display font-bold text-[1.75rem] sm:text-[2.1rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4"
           style={{ '--kontakt-delay': '0.08s' }}
         >
           Wir sind hier <span className="text-brown-mid">für dich</span>
@@ -66,7 +69,7 @@ export default function Kontakt() {
 
         {/* Sub-Headline */}
         <p
-          className="kontakt-animate font-display italic font-medium text-[1rem] md:text-[1.1rem] lg:text-[1.2rem] leading-[1.4] text-brown-warm mb-12 md:mb-16"
+          className="kontakt-animate font-display italic font-medium text-[1rem] sm:text-[1.05rem] md:text-[1.1rem] lg:text-[1.2rem] leading-[1.4] text-brown-warm mb-12 md:mb-16"
           style={{ '--kontakt-delay': '0.16s' }}
         >
           Neusser Straße 34, mitten im Agnesviertel.
@@ -85,10 +88,10 @@ export default function Kontakt() {
             >
               <div className="kontakt-icon-wrap"><MapPinIcon className="kontakt-icon" /></div>
               <div>
-                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
+                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[-0.01em] text-brown-dark mb-1.5">
                   Adresse
                 </h3>
-                <p className="font-body text-[0.9rem] md:text-[0.95rem] leading-[1.65] text-text-muted mb-3">
+                <p className="font-body text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.65] text-text-muted mb-3">
                   Neusser Straße 34<br />
                   50670 Köln · Agnesviertel
                 </p>
@@ -96,7 +99,7 @@ export default function Kontakt() {
                   href={MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-display font-bold text-[0.75rem] md:text-[0.8rem] uppercase tracking-[0.08em] text-red hover:text-red-dark transition-colors duration-200"
+                  className="inline-flex items-center gap-1.5 font-display font-bold text-[0.75rem] md:text-[0.8rem] uppercase tracking-[0.08em] text-brown-mid hover:text-brown-dark transition-colors duration-200"
                 >
                   Route planen
                   <span className="text-[0.85em]" aria-hidden="true">→</span>
@@ -111,10 +114,10 @@ export default function Kontakt() {
             >
               <div className="kontakt-icon-wrap"><ClockIcon className="kontakt-icon" /></div>
               <div>
-                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
+                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[-0.01em] text-brown-dark mb-1.5">
                   Öffnungszeiten
                 </h3>
-                <div className="font-body text-[0.9rem] md:text-[0.95rem] leading-[1.65] text-text-muted">
+                <div className="font-body text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.65] text-text-muted">
                   <div className="flex justify-between gap-4 max-w-[260px]">
                     <span>Mo – So</span>
                     <span className="font-medium text-brown-dark">9 – 18 Uhr</span>
@@ -130,12 +133,12 @@ export default function Kontakt() {
             >
               <div className="kontakt-icon-wrap"><PhoneIcon className="kontakt-icon" /></div>
               <div>
-                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
+                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[-0.01em] text-brown-dark mb-1.5">
                   Telefon
                 </h3>
                 <a
                   href="tel:+49XXXXXXXXXX"
-                  className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red underline underline-offset-2 transition-colors duration-200"
+                  className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-brown-mid underline underline-offset-2 transition-colors duration-200"
                 >
                   +49 XXX XXXXXXX
                 </a>
@@ -149,7 +152,7 @@ export default function Kontakt() {
             >
               <div className="kontakt-icon-wrap"><InstagramIcon className="kontakt-icon" /></div>
               <div>
-                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[0.02em] text-brown-dark mb-1.5">
+                <h3 className="font-display font-bold text-[1.1rem] md:text-[1.2rem] uppercase tracking-[-0.01em] text-brown-dark mb-1.5">
                   Folge uns
                 </h3>
                 <div className="flex flex-col gap-1">
@@ -157,7 +160,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.coffeeshop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-red underline underline-offset-2 transition-colors duration-200"
+                    className="font-body text-[0.9rem] md:text-[0.95rem] text-text-muted hover:text-brown-mid underline underline-offset-2 transition-colors duration-200"
                   >
                     @frohnatur.coffeeshop
                   </a>
@@ -165,7 +168,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.bistrooo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 underline underline-offset-2 transition-all duration-200"
+                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-brown-mid hover:opacity-100 underline underline-offset-2 transition-all duration-200"
                   >
                     @frohnatur.bistrooo
                   </a>
@@ -173,7 +176,7 @@ export default function Kontakt() {
                     href="https://instagram.com/frohnatur.bar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-red hover:opacity-100 underline underline-offset-2 transition-all duration-200"
+                    className="font-body text-[0.85rem] md:text-[0.9rem] text-text-muted opacity-70 hover:text-brown-mid hover:opacity-100 underline underline-offset-2 transition-all duration-200"
                   >
                     @frohnatur.bar
                   </a>
@@ -182,48 +185,52 @@ export default function Kontakt() {
             </div>
           </div>
 
-          {/* Right: Map placeholder with illustration */}
+          {/* Right: Google Maps — DSGVO two-click consent */}
           <div
             className="kontakt-animate kontakt-map-area mt-12 md:mt-0"
             style={{ '--kontakt-delay': '0.32s' }}
           >
-            <div className="kontakt-map-card relative flex flex-col items-center justify-center rounded-xl bg-cream py-12 px-8 md:py-16 md:h-full min-h-[320px]">
-              {/* Decorative large map pin — soft icon circle */}
-              <div className="soft-icon-circle bg-cream w-[80px] h-[80px] md:w-[92px] md:h-[92px] lg:w-[100px] lg:h-[100px] flex items-center justify-center mb-6">
-                <svg className="kontakt-pin w-[40px] md:w-[46px] lg:w-[52px] h-auto text-red opacity-80" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 15 9 15s9-8.25 9-15c0-4.97-4.03-9-9-9zm0 12.75c-2.07 0-3.75-1.68-3.75-3.75S9.93 5.25 12 5.25s3.75 1.68 3.75 3.75-1.68 3.75-3.75 3.75z" />
-                </svg>
-              </div>
-
-              {/* Address — large, typographic */}
-              <p className="font-display font-bold text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem] uppercase tracking-[-0.01em] leading-[1.15] text-brown-dark text-center mb-1.5">
-                Neusser Str. 34
-              </p>
-              <p className="font-display italic font-medium text-[0.95rem] md:text-[1.05rem] text-brown-warm text-center mb-6 leading-[1.4]">
-                Agnesviertel · Köln
-              </p>
-
-              {/* CTA */}
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-display font-bold text-[0.8rem] lg:text-[0.85rem] tracking-[0.08em] uppercase text-white bg-red px-7 lg:px-8 py-3.5 lg:py-4 rounded-xl no-underline soft-btn focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]"
-              >
-                Auf Google Maps anzeigen
-                <span className="text-base" aria-hidden="true">→</span>
-              </a>
+            <div className="kontakt-map-card relative block rounded-xl overflow-hidden md:h-full min-h-[280px] md:min-h-[320px]">
+              {mapConsented ? (
+                /* Consented: show Google Maps iframe */
+                <iframe
+                  src={MAPS_EMBED_URL}
+                  className="absolute inset-0 w-full h-full border-0"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps — Cafe Frohnatur, Neusser Straße 34, Köln"
+                />
+              ) : (
+                /* Default: consent placeholder */
+                <button
+                  type="button"
+                  onClick={() => setMapConsented(true)}
+                  className="absolute inset-0 w-full bg-cream flex items-center justify-center cursor-pointer group focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-[3px]"
+                >
+                  <div className="text-center px-6">
+                    <MapPinIcon className="w-10 h-10 text-brown-warm opacity-40 mx-auto mb-3" />
+                    <p className="font-display font-bold text-[1.1rem] md:text-[1.3rem] uppercase tracking-[-0.01em] text-brown-dark mb-1">
+                      Neusser Str. 34
+                    </p>
+                    <p className="font-display italic font-medium text-[0.85rem] md:text-[0.95rem] text-brown-warm mb-5">
+                      Agnesviertel · Köln
+                    </p>
+                    <span className="inline-flex items-center gap-2 font-display font-bold text-[0.8rem] lg:text-[0.85rem] tracking-[0.08em] uppercase text-cream bg-brown-dark px-7 lg:px-8 py-3.5 lg:py-4 rounded-[14px] soft-btn group-hover:bg-brown-mid transition-colors duration-200">
+                      Karte laden
+                      <MapPinIcon className="w-4 h-4" />
+                    </span>
+                    <p className="font-body text-[0.65rem] text-text-muted opacity-50 mt-3 max-w-[220px] mx-auto leading-[1.5]">
+                      Durch Klick werden Daten an Google übermittelt.
+                    </p>
+                  </div>
+                </button>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative coffee beans */}
-      <CoffeeBean className="deco-bean--kontakt-1" color="var(--color-brown-mid)" />
-      <CoffeeBean className="deco-bean--kontakt-2" color="var(--color-brown-dark)" />
-      <CoffeeBean className="deco-bean--kontakt-3" color="var(--color-brown-warm)" />
-      <CoffeeBean className="deco-bean--kontakt-4" color="var(--color-brown-dark)" />
-      <CoffeeBean className="deco-bean--kontakt-5" color="var(--color-brown-warm)" />
     </section>
   );
 }

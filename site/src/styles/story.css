@@ -20,44 +20,57 @@
   transform: translateY(0);
 }
 
-/* ── Illustration: subtiles Schweben ── */
+/* ── Illustration entrance: scale-in ── */
+
+.story-illustration.story-animate {
+  transform: scale(0.88);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-illustration.story-animate.story-visible {
+  transform: scale(1);
+}
+
+/* ── Illustration: subtiles Schweben + warme Tiefe ── */
 
 .story-character {
   animation: storyFloat 5s ease-in-out infinite;
   animation-delay: 0.5s;
+  filter: drop-shadow(0 6px 30px rgba(var(--color-brown-warm-rgb), 0.12));
 }
 
 @keyframes storyFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-7px); }
 }
 
-/* ── Decorative coffee beans — Story positions ── */
-
-[class*="deco-bean--story"] {
-  --bean-line: var(--color-cream-warm);
+/* ── Warm glow behind illustration ── */
+.story-illustration-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--color-cream-warm-rgb), 0.4) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.deco-bean--story-1 { top: 10%;    right: 8%;   width: 22px; height: 22px; transform: rotate(25deg);   opacity: 0.16; }
-.deco-bean--story-2 { bottom: 18%; left: 6%;    width: 28px; height: 28px; transform: rotate(-40deg);  opacity: 0.14; }
-.deco-bean--story-3 { bottom: 8%;  right: 15%;  width: 20px; height: 20px; transform: rotate(60deg);   opacity: 0.18; }
-.deco-bean--story-4 { top: 35%;    left: 3%;    width: 16px; height: 16px; transform: rotate(-15deg);  opacity: 0.12; }
-.deco-bean--story-5 { top: 55%;    right: 4%;   width: 24px; height: 24px; transform: rotate(48deg);   opacity: 0.14; }
 
 @media (min-width: 768px) {
-  .deco-bean--story-1 { width: 28px; height: 28px; right: 6%; }
-  .deco-bean--story-2 { width: 32px; height: 32px; left: 4%; }
-  .deco-bean--story-3 { width: 24px; height: 24px; }
-  .deco-bean--story-4 { width: 20px; height: 20px; left: 2%; }
-  .deco-bean--story-5 { width: 30px; height: 30px; right: 3%; }
+  .story-illustration-glow {
+    width: 400px;
+    height: 400px;
+  }
 }
 
-@media (min-width: 1024px) {
-  .deco-bean--story-1 { width: 32px; height: 32px; top: 12%;   right: 5%; }
-  .deco-bean--story-2 { width: 38px; height: 38px; bottom: 15%; left: 3%; }
-  .deco-bean--story-3 { width: 30px; height: 30px; right: 12%; }
-  .deco-bean--story-4 { width: 24px; height: 24px; left: 2%; top: 40%; }
-  .deco-bean--story-5 { width: 36px; height: 36px; right: 2%; top: 58%; }
+/* ── Decorative accent line near section tag ── */
+.story-accent-line {
+  width: 24px;
+  height: 1.5px;
+  background: rgba(var(--color-brown-warm-rgb), 0.25);
+  border-radius: 1px;
 }
 
 /* ═══════════════════════════════════
@@ -65,7 +78,8 @@
 ═══════════════════════════════════ */
 
 @media (prefers-reduced-motion: reduce) {
-  .story-animate {
+  .story-animate,
+  .story-illustration.story-animate {
     opacity: 1;
     transform: none;
     transition: none;

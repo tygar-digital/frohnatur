@@ -1,4 +1,30 @@
-/* Fonts loaded via <link> in Layout.astro for non-render-blocking loading */
+/* ═══════════════════════════════════
+   LOCAL FONTS — DSGVO-konform
+   Keine externen Requests an Google
+═══════════════════════════════════ */
+
+/* Barlow Condensed — Regular */
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/barlow-condensed-400.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/barlow-condensed-500.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/barlow-condensed-600.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/barlow-condensed-700.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 800; font-display: swap; src: url('/fonts/barlow-condensed-800.woff2') format('woff2'); }
+
+/* Barlow Condensed — Italic */
+@font-face { font-family: 'Barlow Condensed'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/barlow-condensed-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: italic; font-weight: 500; font-display: swap; src: url('/fonts/barlow-condensed-500-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: italic; font-weight: 600; font-display: swap; src: url('/fonts/barlow-condensed-600-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: italic; font-weight: 700; font-display: swap; src: url('/fonts/barlow-condensed-700-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Barlow Condensed'; font-style: italic; font-weight: 800; font-display: swap; src: url('/fonts/barlow-condensed-800-italic.woff2') format('woff2'); }
+
+/* DM Sans — Regular + Italic (variable font) */
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/dm-sans-400.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/dm-sans-500.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/dm-sans-600.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/dm-sans-700.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/dm-sans-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 500; font-display: swap; src: url('/fonts/dm-sans-500-italic.woff2') format('woff2'); }
+
 @import "tailwindcss";
 @source "../components/**/*.{jsx,tsx}";
 @source "../pages/**/*.astro";
@@ -16,12 +42,12 @@
   --color-cream: #F5ECD7;
   --color-cream-light: #FAF6ED;
   --color-cream-warm: #EDE0C8;
-  --color-red: #C8402D;
-  --color-red-dark: #A83520;
-  --color-red-soft: #D4654F;
   --color-text: #4C1D03;
   --color-text-muted: #7A5A3E;
   --color-white: #FFFBF5;
+  --color-brown-film: #3A1805;
+  --color-brown-film-deep: #2E1001;
+  --color-brown-darkest: #1a0a00;
 
   /* Fonts */
   --font-display: 'Barlow Condensed', sans-serif;
@@ -37,6 +63,25 @@
   --spacing-section: 8rem;
 }
 
+/* RGB variants for rgba() usage */
+:root {
+  --color-brown-dark-rgb: 76, 29, 3;
+  --color-brown-mid-rgb: 122, 53, 24;
+  --color-brown-warm-rgb: 155, 94, 53;
+  --color-cream-rgb: 245, 236, 215;
+  --color-cream-light-rgb: 250, 246, 237;
+  --color-cream-warm-rgb: 237, 224, 200;
+  --color-white-rgb: 255, 251, 245;
+  --color-black-rgb: 0, 0, 0;
+  --color-brown-film-rgb: 58, 24, 5;
+  --color-brown-darkest-rgb: 26, 10, 0;
+
+  /* Transition Timing */
+  --timing-fast: 0.2s;
+  --timing-normal: 0.3s;
+  --timing-slow: 0.6s;
+}
+
 /* ═══════════════════════════════════
    SOFT UI UTILITIES
    Weiche Formen, sanfte Schatten,
@@ -45,81 +90,86 @@
 
 /* Soft floating card — light surface */
 .soft-card {
-  background: rgba(255, 251, 245, 0.6);
-  border: 1px solid rgba(155, 94, 53, 0.06);
+  background: rgba(var(--color-white-rgb), 0.6);
+  border: 1px solid rgba(var(--color-brown-warm-rgb), 0.06);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.05);
+  box-shadow: 0 4px 20px rgba(var(--color-brown-dark-rgb), 0.06);
 }
 
 /* Soft card on warm background */
 .soft-card-warm {
-  background: rgba(245, 236, 215, 0.45);
-  border: 1px solid rgba(155, 94, 53, 0.06);
+  background: rgba(var(--color-cream-rgb), 0.45);
+  border: 1px solid rgba(var(--color-brown-warm-rgb), 0.06);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(76, 29, 3, 0.05);
+  box-shadow: 0 4px 20px rgba(var(--color-brown-dark-rgb), 0.05);
 }
 
 /* Soft card on dark surface */
 .soft-card-dark {
-  background: rgba(122, 53, 24, 0.18);
-  border: 1px solid rgba(245, 236, 215, 0.06);
+  background: rgba(var(--color-brown-mid-rgb), 0.18);
+  border: 1px solid rgba(var(--color-cream-rgb), 0.06);
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(var(--color-black-rgb), 0.1);
 }
 
 /* Glass nav bar */
 .soft-nav {
-  background: rgba(255, 251, 245, 0.92);
+  background: rgba(var(--color-white-rgb), 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 251, 245, 0.5);
+  border: 1px solid rgba(var(--color-white-rgb), 0.5);
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(76, 29, 3, 0.05);
+  box-shadow: 0 4px 24px rgba(var(--color-brown-dark-rgb), 0.05);
 }
 
 /* Soft CTA button */
 .soft-btn {
   border: none;
   border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(200, 64, 45, 0.25);
+  box-shadow: 0 4px 16px rgba(var(--color-brown-dark-rgb), 0.25);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .soft-btn:hover {
-  box-shadow: 0 6px 24px rgba(200, 64, 45, 0.35);
+  box-shadow: 0 6px 24px rgba(var(--color-brown-dark-rgb), 0.35);
   transform: translateY(-2px);
 }
 
 .soft-btn:active {
-  box-shadow: 0 2px 8px rgba(200, 64, 45, 0.2);
-  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(var(--color-brown-dark-rgb), 0.2);
+  transform: translateY(0) scale(0.96);
 }
 
 /* Soft icon circle */
 .soft-icon-circle {
-  background: rgba(245, 236, 215, 0.6);
-  border: 1px solid rgba(155, 94, 53, 0.08);
+  background: rgba(var(--color-cream-rgb), 0.6);
+  border: 1px solid rgba(var(--color-brown-warm-rgb), 0.08);
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(76, 29, 3, 0.04);
+  box-shadow: 0 2px 8px rgba(var(--color-brown-dark-rgb), 0.06);
 }
 
 /* Soft divider */
 .soft-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(155, 94, 53, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--color-brown-warm-rgb), 0.12), transparent);
 }
 
 .soft-divider-dark {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(237, 224, 200, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--color-cream-warm-rgb), 0.18), transparent);
 }
 
 /* Soft blockquote */
 .soft-quote {
-  background: rgba(255, 251, 245, 0.4);
-  border-left: 3px solid rgba(200, 64, 45, 0.35);
+  background: rgba(var(--color-white-rgb), 0.4);
+  border-left: 3px solid rgba(var(--color-brown-warm-rgb), 0.35);
   border-radius: 0 12px 12px 0;
-  box-shadow: 0 2px 12px rgba(76, 29, 3, 0.03);
+  box-shadow: 0 2px 12px rgba(var(--color-brown-dark-rgb), 0.03);
+}
+
+/* Soft large shadow — for floating images */
+.soft-shadow-lg {
+  box-shadow: 0 12px 40px rgba(var(--color-brown-dark-rgb), 0.12);
 }
 
 /* ═══════════════════════════════════
@@ -168,6 +218,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 }
 
@@ -230,7 +284,22 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
+}
+
+/* Keep grain subtle on dark backgrounds */
+.bg-brown-dark.texture-grain::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+}
+
+/* ── Warm glow — subtle radial warmth for light sections ── */
+.warm-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(var(--color-cream-warm-rgb), 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
