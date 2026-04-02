@@ -1,4 +1,3 @@
-import CoffeeBean from './CoffeeBean.jsx';
 import { useScrollAnimation } from '../hooks/useScrollAnimation.js';
 
 /* ═══════════════════════════════════
@@ -75,17 +74,32 @@ export default function Angebot() {
     <section
       ref={sectionRef}
       id="angebot"
-      className="relative bg-brown-dark texture-grain pt-40 md:pt-52 lg:pt-60 pb-10 md:pb-14 lg:pb-16 overflow-hidden"
+      className="relative angebot-bg-fade texture-grain pt-20 md:pt-28 lg:pt-36 pb-10 md:pb-14 lg:pb-16 overflow-hidden"
     >
+      {/* ── Innenraum image ── */}
+      <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20 mb-16 md:mb-20 lg:mb-24">
+        <img
+          className="w-full h-auto rounded-2xl md:rounded-3xl object-cover max-h-[500px] md:max-h-[600px] soft-shadow-lg"
+          src="/assets/innenraum.webp"
+          alt="Frohnatur Kaffeeshop — Kuchen und Latte Art (KI-generiert, Platzhalter)"
+          loading="lazy"
+        />
+      </div>
+
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
-        {/* ── Section Tag — aligned with column content ── */}
-        <h2 className="angebot-animate angebot-tag block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-cream-warm mb-8 md:mb-12 text-center">
+        {/* ── Section Tag ── */}
+        <span className="angebot-animate angebot-tag block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-cream-warm mb-6 md:mb-8 text-center">
           Was wir machen
+        </span>
+
+        {/* ── Section Headline ── */}
+        <h2 className="angebot-animate font-display font-bold text-[1.75rem] sm:text-[2.1rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-cream-light mb-10 md:mb-14 text-center">
+          Unser Angebot
         </h2>
 
         {/* ── Drei Bereiche — gleich groß ── */}
-        <div className="angebot-grid grid grid-cols-1 md:grid-cols-3 gap-0 md:items-stretch">
+        <div className="angebot-grid grid grid-cols-1 lg:grid-cols-3 gap-0 lg:items-stretch">
           {offerings.map((item, i) => (
             <div
               key={item.title}
@@ -102,11 +116,11 @@ export default function Angebot() {
                   <item.icon className="angebot-icon w-[132px] h-[132px] md:w-[156px] md:h-[156px] lg:w-[182px] lg:h-[182px] text-cream-warm" />
                 </div>
 
-                <h3 className="font-display font-bold text-[1.75rem] md:text-[2rem] lg:text-[2.25rem] uppercase tracking-[-0.01em] leading-[1.1] text-cream-light mb-2 text-center">
+                <h3 className="font-display font-bold text-[1.75rem] sm:text-[1.85rem] md:text-[2rem] lg:text-[2.25rem] uppercase tracking-[-0.01em] leading-[1.1] text-cream-light mb-2 text-center">
                   {item.title}
                 </h3>
 
-                <p className="font-display italic font-medium text-[1rem] md:text-[1.1rem] lg:text-[1.15rem] text-red-soft mb-3 md:mb-4 text-center">
+                <p className="font-display italic font-medium text-[1rem] md:text-[1.1rem] lg:text-[1.15rem] text-cream mb-3 md:mb-4 text-center">
                   {item.tagline}
                 </p>
 
@@ -119,12 +133,6 @@ export default function Angebot() {
         </div>
       </div>
 
-      {/* ── Decorative coffee beans ── */}
-      <CoffeeBean className="deco-bean--angebot-1" color="var(--color-cream-warm)" />
-      <CoffeeBean className="deco-bean--angebot-2" color="var(--color-cream-warm)" />
-      <CoffeeBean className="deco-bean--angebot-3" color="var(--color-cream-warm)" />
-      <CoffeeBean className="deco-bean--angebot-4" color="var(--color-cream-warm)" />
-      <CoffeeBean className="deco-bean--angebot-5" color="var(--color-cream-warm)" />
     </section>
   );
 }

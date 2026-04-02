@@ -2,6 +2,18 @@
    ANGEBOT — Animations, Layout & Positioning
 ═══════════════════════════════════ */
 
+/* ── Background fade — brown to cream ── */
+.angebot-bg-fade {
+  background: linear-gradient(to bottom,
+    var(--color-brown-dark) 0%,
+    var(--color-brown-dark) 20%,
+    var(--color-brown-mid) 45%,
+    var(--color-brown-warm) 65%,
+    var(--color-cream-warm) 85%,
+    var(--color-cream) 100%
+  );
+}
+
 /* ── Scroll-triggered entrance ── */
 
 .angebot-animate {
@@ -30,9 +42,9 @@
   padding-bottom: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .angebot-item {
-    padding: 0 2rem 0 2.5rem;
+    padding: 0 0.75rem;
   }
 
   .angebot-item:first-child {
@@ -44,9 +56,9 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .angebot-item {
-    padding: 0 2.5rem 0 3rem;
+    padding: 0 1rem;
   }
 
   .angebot-item:first-child {
@@ -68,10 +80,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(122, 53, 24, 0.18);
-  border: 1px solid rgba(245, 236, 215, 0.06);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  background-color: var(--color-brown-mid);
+  border: 1px solid rgba(var(--color-cream-warm-rgb), 0.12);
+  box-shadow: 0 4px 20px rgba(var(--color-brown-dark-rgb), 0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* Last text block grows to fill remaining space — equal card heights */
@@ -79,22 +91,24 @@
   flex-grow: 1;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .angebot-item-inner:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 40px rgba(var(--color-brown-dark-rgb), 0.25);
     transform: translateY(-2px);
   }
 }
 
-/* ── Icon hover subtle glow ── */
+/* ── Icon warm glow ── */
 
 .angebot-icon {
-  transition: opacity 0.3s ease;
-  opacity: 0.85;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 8px rgba(var(--color-cream-warm-rgb), 0.15));
 }
 
 .angebot-item-inner:hover .angebot-icon {
   opacity: 1;
+  filter: drop-shadow(0 4px 12px rgba(var(--color-cream-warm-rgb), 0.25));
 }
 
 /* ── Trennlinien — soft dividers ── */
@@ -110,11 +124,11 @@
   left: 1.25rem;
   right: 1.25rem;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(237, 224, 200, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(var(--color-cream-warm-rgb), 0.18), transparent);
 }
 
 /* Desktop: vertikale Linie links */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .angebot-divider {
     top: 1rem;
     bottom: 1rem;
@@ -122,41 +136,13 @@
     right: auto;
     width: 1px;
     height: auto;
-    background: linear-gradient(180deg, transparent, rgba(237, 224, 200, 0.12), transparent);
+    background: linear-gradient(180deg, transparent, rgba(var(--color-cream-warm-rgb), 0.18), transparent);
   }
 }
 
-/* ── Decorative coffee beans — Angebot positions ── */
-
-[class*="deco-bean--angebot"] {
-  --bean-line: var(--color-brown-dark);
-}
-
-.deco-bean--angebot-1 { top: 8%;     right: 12%;  width: 20px; height: 20px; transform: rotate(-35deg);  opacity: 0.15; }
-.deco-bean--angebot-2 { top: 22%;    left: 5%;    width: 30px; height: 30px; transform: rotate(55deg);   opacity: 0.18; }
-.deco-bean--angebot-3 { bottom: 30%; right: 4%;   width: 34px; height: 34px; transform: rotate(20deg);   opacity: 0.16; }
-.deco-bean--angebot-4 { bottom: 12%; left: 18%;   width: 22px; height: 22px; transform: rotate(-60deg);  opacity: 0.13; }
-.deco-bean--angebot-5 { bottom: 6%;  right: 22%;  width: 28px; height: 28px; transform: rotate(45deg);   opacity: 0.15; }
-
-@media (min-width: 768px) {
-  .deco-bean--angebot-1 { width: 24px; height: 24px; right: 10%; }
-  .deco-bean--angebot-2 { width: 34px; height: 34px; }
-  .deco-bean--angebot-3 { width: 40px; height: 40px; }
-  .deco-bean--angebot-4 { width: 26px; height: 26px; }
-  .deco-bean--angebot-5 { width: 32px; height: 32px; }
-}
-
-@media (min-width: 1024px) {
-  .deco-bean--angebot-1 { width: 28px; height: 28px; top: 10%;  right: 8%; }
-  .deco-bean--angebot-2 { width: 40px; height: 40px; left: 3%; }
-  .deco-bean--angebot-3 { width: 44px; height: 44px; right: 3%; }
-  .deco-bean--angebot-4 { width: 30px; height: 30px; left: 15%; }
-  .deco-bean--angebot-5 { width: 38px; height: 38px; right: 18%; }
-}
-
-/* ── Grain-Overlay auf dunklem Hintergrund — minimal für Soft UI ── */
-.bg-brown-dark.texture-grain::before {
-  opacity: 0.02;
+/* ── Grain-Overlay — match Hero grain for seamless transition ── */
+.angebot-bg-fade.texture-grain::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
 }
 
 /* ═══════════════════════════════════
