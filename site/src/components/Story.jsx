@@ -23,7 +23,7 @@ export default function Story() {
           <div>
             {/* ── Section Tag with decorative accent ── */}
             <div className="story-animate story-tag flex items-center gap-3 mb-6 md:mb-8">
-              <span className="story-accent-line" aria-hidden="true" />
+              <span className="section-accent-line" aria-hidden="true" />
               <span className="block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-brown-warm">
                 Unsere Geschichte
               </span>

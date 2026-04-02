@@ -225,6 +225,17 @@
   }
 }
 
+/* ── Section tag accent line (shared) ── */
+.section-accent-line {
+  width: 24px;
+  height: 1.5px;
+  background: rgba(var(--color-brown-warm-rgb), 0.25);
+  border-radius: 1px;
+}
+.section-accent-line--dark {
+  background: rgba(var(--color-cream-warm-rgb), 0.25);
+}
+
 /* ═══════════════════════════════════
    GLOBAL KEYFRAMES
 ═══════════════════════════════════ */

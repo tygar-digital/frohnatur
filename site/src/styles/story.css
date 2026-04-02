@@ -65,13 +65,6 @@
   }
 }
 
-/* ── Decorative accent line near section tag ── */
-.story-accent-line {
-  width: 24px;
-  height: 1.5px;
-  background: rgba(var(--color-brown-warm-rgb), 0.25);
-  border-radius: 1px;
-}
 
 /* ═══════════════════════════════════
    ACCESSIBILITY

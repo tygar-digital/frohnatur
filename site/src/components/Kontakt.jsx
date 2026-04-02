@@ -55,9 +55,12 @@ export default function Kontakt() {
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
         {/* Section Tag */}
-        <span className="kontakt-animate kontakt-tag block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-brown-warm mb-6 md:mb-8">
-          Komm vorbei
-        </span>
+        <div className="kontakt-animate kontakt-tag flex items-center gap-3 mb-6 md:mb-8">
+          <span className="section-accent-line" aria-hidden="true" />
+          <span className="block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-brown-warm">
+            Komm vorbei
+          </span>
+        </div>
 
         {/* Headline */}
         <h2

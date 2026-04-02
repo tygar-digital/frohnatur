@@ -61,6 +61,12 @@ Junge Erwachsene (25–40) aus dem Agnesviertel und umliegenden Vierteln. Urban,
 | Footer | ✅ |
 | Zusammenbau | ✅ |
 
+## Design-System Pflege
+
+- **DESIGN.md** enthält nur grobe Richtlinien: Tokens (Farben, Fonts, Spacing), ästhetische Richtung, visuelle Prinzipien
+- Keine Implementierungs-Details (CSS-Klassen, Animations-Timings, Komponenten-Specs) — die leben im Code
+- Bei Code-Änderungen die Design-Tokens betreffen: DESIGN.md synchron aktualisieren
+
 ## Projekt-Notizen
 
 - Eröffnung war Anfang März 2026

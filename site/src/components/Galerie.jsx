@@ -13,7 +13,6 @@ const photos = [
   { id: 'latte', src: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80', alt: 'Latte Art (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
   { id: 'pastry', src: 'https://images.unsplash.com/photo-1612240498936-65f5101365d2?w=600&q=80', alt: 'Frische Donuts (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
   { id: 'seats', src: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80', alt: 'Sitzbereich (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
-  { id: 'cake', src: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80', alt: 'Kuchen & Süßes (Platzhalter)', caption: 'Platzhalter — echtes Foto folgt' },
 ];
 
 /* ── Sprocket Hole (einzelnes Loch) ── */
@@ -150,11 +149,14 @@ export default function Galerie() {
     >
       {/* ── Section Heading ── */}
       <div className="px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20 pt-20 md:pt-28 lg:pt-32 pb-8 md:pb-12">
-        <span className="filmroll-animate block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-brown-warm mb-4 md:mb-5">
-          Einblicke
-        </span>
+        <div className="filmroll-animate flex items-center gap-3 mb-6 md:mb-8">
+          <span className="section-accent-line" aria-hidden="true" />
+          <span className="block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-brown-warm">
+            Einblicke
+          </span>
+        </div>
         <h2 id="galerie-heading" className="filmroll-animate font-display font-bold text-[1.75rem] sm:text-[2.1rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-brown-dark mb-3 md:mb-4">
-          So sieht's bei uns aus
+          So sieht's <span className="text-brown-mid">bei uns</span> aus
         </h2>
       </div>
 

@@ -79,7 +79,7 @@ export default function Angebot() {
       {/* ── Innenraum image ── */}
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20 mb-16 md:mb-20 lg:mb-24">
         <img
-          className="w-full h-auto rounded-2xl md:rounded-3xl object-cover max-h-[500px] md:max-h-[600px] soft-shadow-lg"
+          className="w-full h-auto rounded-2xl md:rounded-3xl object-cover max-h-[500px] md:max-h-[600px] max-w-[896px] mx-auto soft-shadow-lg"
           src="/assets/innenraum.webp"
           alt="Frohnatur Kaffeeshop — Kuchen und Latte Art (KI-generiert, Platzhalter)"
           loading="lazy"
@@ -89,13 +89,16 @@ export default function Angebot() {
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
         {/* ── Section Tag ── */}
-        <span className="angebot-animate angebot-tag block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-cream-warm mb-6 md:mb-8 text-center">
-          Was wir machen
-        </span>
+        <div className="angebot-animate angebot-tag flex items-center gap-3 mb-6 md:mb-8">
+          <span className="section-accent-line section-accent-line--dark" aria-hidden="true" />
+          <span className="block font-display italic font-semibold text-[0.6rem] md:text-[0.65rem] uppercase tracking-[0.15em] text-cream-warm">
+            Was wir machen
+          </span>
+        </div>
 
         {/* ── Section Headline ── */}
-        <h2 className="angebot-animate font-display font-bold text-[1.75rem] sm:text-[2.1rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-cream-light mb-10 md:mb-14 text-center">
-          Unser Angebot
+        <h2 className="angebot-animate font-display font-bold text-[1.75rem] sm:text-[2.1rem] md:text-[2.25rem] lg:text-[2.75rem] xl:text-[3rem] uppercase tracking-[-0.01em] leading-[1.05] text-cream-light mb-10 md:mb-14">
+          Unser <span className="text-cream-warm">Angebot</span>
         </h2>
 
         {/* ── Drei Bereiche — gleich groß ── */}
@@ -113,18 +116,18 @@ export default function Angebot() {
 
               <div className="angebot-item-inner">
                 <div className="flex justify-center md:justify-center mb-1 md:mb-2">
-                  <item.icon className="angebot-icon w-[132px] h-[132px] md:w-[156px] md:h-[156px] lg:w-[182px] lg:h-[182px] text-cream-warm" />
+                  <item.icon className="angebot-icon w-[132px] h-[132px] md:w-[156px] md:h-[156px] lg:w-[182px] lg:h-[182px] text-brown-warm" />
                 </div>
 
-                <h3 className="font-display font-bold text-[1.75rem] sm:text-[1.85rem] md:text-[2rem] lg:text-[2.25rem] uppercase tracking-[-0.01em] leading-[1.1] text-cream-light mb-2 text-center">
+                <h3 className="font-display font-bold text-[1.75rem] sm:text-[1.85rem] md:text-[2rem] lg:text-[2.25rem] uppercase tracking-[-0.01em] leading-[1.1] text-brown-dark mb-2 text-center">
                   {item.title}
                 </h3>
 
-                <p className="font-display italic font-medium text-[1rem] md:text-[1.1rem] lg:text-[1.15rem] text-cream mb-3 md:mb-4 text-center">
+                <p className="font-display italic font-medium text-[1rem] md:text-[1.1rem] lg:text-[1.15rem] text-brown-mid mb-3 md:mb-4 text-center">
                   {item.tagline}
                 </p>
 
-                <p className="font-body text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.65] text-cream-warm text-center max-w-[320px] mx-auto">
+                <p className="font-body text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.65] text-brown-warm text-center max-w-[320px] mx-auto">
                   {item.description}
                 </p>
               </div>
