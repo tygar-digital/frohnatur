@@ -102,13 +102,11 @@
 /* ── Icon warm glow ── */
 
 .angebot-icon {
-  transition: opacity 0.3s ease, filter 0.3s ease;
-  opacity: 0.9;
+  transition: filter 0.3s ease;
   filter: drop-shadow(0 2px 8px rgba(var(--color-cream-warm-rgb), 0.15));
 }
 
 .angebot-item-inner:hover .angebot-icon {
-  opacity: 1;
   filter: drop-shadow(0 4px 12px rgba(var(--color-cream-warm-rgb), 0.25));
 }
 

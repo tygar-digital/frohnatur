@@ -106,7 +106,7 @@ export default function Angebot() {
 
               <div className="angebot-item-inner">
                 <div className="flex justify-center md:justify-center mb-1 md:mb-2">
-                  <item.icon className="angebot-icon w-[132px] h-[132px] md:w-[156px] md:h-[156px] lg:w-[182px] lg:h-[182px] text-brown-warm" />
+                  <item.icon className="angebot-icon w-[132px] h-[132px] md:w-[156px] md:h-[156px] lg:w-[182px] lg:h-[182px]" />
                 </div>
 
                 <h3 className="font-display font-bold text-[1.75rem] sm:text-[1.85rem] md:text-[2rem] lg:text-[2.25rem] uppercase tracking-[-0.01em] leading-[1.1] text-brown-dark mb-2 text-center">
@@ -117,7 +117,7 @@ export default function Angebot() {
                   {item.tagline}
                 </p>
 
-                <p className="font-body text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.65] text-brown-warm text-center max-w-[320px] mx-auto">
+                <p className="font-body font-medium text-[0.9rem] md:text-[0.95rem] lg:text-[1rem] leading-[1.65] text-brown-mid text-center max-w-[320px] mx-auto">
                   {item.description}
                 </p>
               </div>
