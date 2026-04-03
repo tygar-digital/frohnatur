@@ -21,6 +21,12 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  /* ── Body scroll lock when menu open ── */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   /* ── Focus trap + ESC for mobile menu ── */
   useEffect(() => {
     if (!menuOpen) return;
@@ -56,10 +62,10 @@ export default function Hero() {
     <section className="relative flex flex-col h-[100svh] overflow-hidden hero-bg-gradient texture-grain pt-9 md:pt-10">
 
       {/* ── Nav — Glass morphism ── */}
-      <nav className={`hero-nav fixed left-0 right-0 z-51 transition-[top] duration-300 ${navScrolled ? 'top-0' : 'top-[26px]'} px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20`}>
-        <div className={`hero-nav-bar flex items-center justify-between px-5 py-3 md:px-6 md:py-3.5 lg:px-8 ${navScrolled ? 'nav-scrolled' : ''}`}>
+      <nav className={`hero-nav fixed left-0 right-0 ${menuOpen ? 'z-57' : 'z-51'} transition-[top] duration-300 ${navScrolled ? 'top-0' : 'top-[26px]'} px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20`}>
+        <div className={`hero-nav-bar flex items-center justify-between px-5 py-3 md:px-6 md:py-3.5 lg:px-8 ${navScrolled && !menuOpen ? 'nav-scrolled' : ''}`}>
           <img
-            className={`h-[18px] w-auto lg:h-[18px] transition-all duration-400 ${navScrolled ? 'brightness-[0.3] opacity-90' : 'brightness-[10]'}`}
+            className={`h-[18px] w-auto lg:h-[18px] transition-all duration-400 ${navScrolled && !menuOpen ? 'brightness-[0.3] opacity-90' : 'brightness-[10]'}`}
             src="/assets/logo.svg"
             alt="Frohnatur"
           />
@@ -92,7 +98,7 @@ export default function Hero() {
           {/* Burger — soft circle */}
           <button
             ref={burgerRef}
-            className={`flex md:hidden items-center justify-center w-10 h-10 cursor-pointer p-0 relative z-52 border-none focus-visible:outline-2 focus-visible:outline-brown-mid focus-visible:outline-offset-[3px]`}
+            className={`flex md:hidden items-center justify-center w-10 h-10 cursor-pointer p-0 relative z-10 border-none focus-visible:outline-2 focus-visible:outline-brown-mid focus-visible:outline-offset-[3px]`}
             aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
             aria-expanded={menuOpen}
             onClick={toggleMenu}
@@ -109,7 +115,7 @@ export default function Hero() {
       {/* ── Mobile Menu Overlay ── */}
       <div
         ref={menuRef}
-        className={`hero-mobile-menu fixed inset-0 z-50 flex flex-col justify-center items-center gap-8 text-center transition-opacity duration-350 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`hero-mobile-menu fixed inset-0 z-56 flex flex-col justify-center items-center gap-8 text-center transition-opacity duration-350 ease-in-out ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         aria-hidden={!menuOpen}
       >
         <div className="flex flex-col gap-4">

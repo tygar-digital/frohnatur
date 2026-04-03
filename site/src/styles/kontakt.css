@@ -86,7 +86,7 @@
 /* ── Map card — soft floating ── */
 
 .kontakt-map-card {
-  border-radius: 20px !important;
+  border-radius: 20px;
   background: rgba(var(--color-white-rgb), 0.6);
   border: 1px solid rgba(var(--color-brown-warm-rgb), 0.10);
   box-shadow: 0 4px 20px rgba(var(--color-brown-dark-rgb), 0.10);
