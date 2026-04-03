@@ -74,7 +74,7 @@ export default function Angebot() {
     <section
       ref={sectionRef}
       id="angebot"
-      className="relative angebot-bg-fade texture-grain pt-20 md:pt-28 lg:pt-36 pb-10 md:pb-14 lg:pb-16 overflow-hidden"
+      className="relative angebot-bg-fade texture-grain pt-12 md:pt-16 lg:pt-20 pb-6 md:pb-8 lg:pb-10 overflow-hidden -mt-px"
     >
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 

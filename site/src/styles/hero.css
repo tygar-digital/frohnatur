@@ -116,6 +116,18 @@
   paint-order: stroke fill;
 }
 
+/* ── Bottom gradient fade — scroll hint into Angebot ── */
+
+/* ── Hero background gradient — smooth transition into Angebot ── */
+
+.hero-bg-gradient {
+  background: linear-gradient(to bottom,
+    var(--color-brown-dark) 0%,
+    var(--color-brown-dark) 90%,
+    color-mix(in srgb, var(--color-brown-dark) 80%, var(--color-brown-mid)) 100%
+  );
+}
+
 /* ── Scroll indicator line ── */
 
 .hero-scroll-line {

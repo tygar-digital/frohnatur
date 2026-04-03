@@ -2,15 +2,16 @@
    ANGEBOT — Animations, Layout & Positioning
 ═══════════════════════════════════ */
 
-/* ── Background fade — brown to cream ── */
+/* ── Background fade — brown-mid to cream-warm (continues into Story) ── */
 .angebot-bg-fade {
   background: linear-gradient(to bottom,
-    var(--color-brown-dark) 0%,
-    var(--color-brown-dark) 20%,
-    var(--color-brown-mid) 45%,
+    color-mix(in srgb, var(--color-brown-dark) 80%, var(--color-brown-mid)) 0%,
+    color-mix(in srgb, var(--color-brown-dark) 50%, var(--color-brown-mid)) 12%,
+    var(--color-brown-mid) 25%,
+    color-mix(in srgb, var(--color-brown-mid) 60%, var(--color-brown-warm)) 45%,
     var(--color-brown-warm) 65%,
-    var(--color-cream-warm) 85%,
-    var(--color-cream) 100%
+    color-mix(in srgb, var(--color-brown-warm) 50%, var(--color-cream-warm)) 85%,
+    var(--color-cream-warm) 100%
   );
 }
 

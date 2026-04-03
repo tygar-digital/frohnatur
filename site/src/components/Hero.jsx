@@ -53,7 +53,7 @@ export default function Hero() {
   }, [menuOpen]);
 
   return (
-    <section className="relative flex flex-col h-[100svh] overflow-hidden bg-brown-dark texture-grain pt-9 md:pt-10">
+    <section className="relative flex flex-col h-[100svh] overflow-hidden hero-bg-gradient texture-grain pt-9 md:pt-10">
 
       {/* ── Nav — Glass morphism ── */}
       <nav className={`hero-nav fixed left-0 right-0 z-51 transition-[top] duration-300 ${navScrolled ? 'top-0' : 'top-[26px]'} px-6 pt-5 sm:px-8 sm:pt-6 md:px-12 md:pt-7 lg:px-16 lg:pt-8 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20`}>
@@ -151,6 +151,8 @@ export default function Hero() {
           Komm vorbei →
         </a>
       </div>
+
+
 
       {/* ── Lampe — hängt von der Decke ── */}
       <div className="hero-lamp-wrapper">

@@ -12,7 +12,7 @@ export default function Story() {
     <section
       ref={sectionRef}
       id="story"
-      className="relative bg-cream texture-grain warm-glow py-20 md:py-28 lg:py-32 overflow-hidden"
+      className="relative story-bg-fade texture-grain warm-glow py-20 md:py-28 lg:py-32 overflow-hidden -mt-px"
     >
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
