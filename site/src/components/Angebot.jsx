@@ -76,16 +76,6 @@ export default function Angebot() {
       id="angebot"
       className="relative angebot-bg-fade texture-grain pt-20 md:pt-28 lg:pt-36 pb-10 md:pb-14 lg:pb-16 overflow-hidden"
     >
-      {/* ── Innenraum image ── */}
-      <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20 mb-16 md:mb-20 lg:mb-24">
-        <img
-          className="w-full h-auto rounded-2xl md:rounded-3xl object-cover max-h-[500px] md:max-h-[600px] max-w-[896px] mx-auto soft-shadow-lg"
-          src="/assets/innenraum.webp"
-          alt="Frohnatur Kaffeeshop — Kuchen und Latte Art (KI-generiert, Platzhalter)"
-          loading="lazy"
-        />
-      </div>
-
       <div className="relative z-10 px-6 sm:px-8 md:px-12 lg:px-16 xl:max-w-[1400px] xl:mx-auto xl:w-full xl:px-20">
 
         {/* ── Section Tag ── */}
